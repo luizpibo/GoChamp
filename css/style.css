@@ -30,7 +30,8 @@ h5,
 h6 {
   margin: 0;
   font-weight: 500;
-  color: var(--black1);
+  color: var(--white1);
+  font-family: "Permanent Marker", cursive;
 }
 
 h1 {
@@ -628,7 +629,13 @@ ol {
   background-repeat: repeat;
   box-shadow: inset 0 0 2rem 0.4em #00000077;
 }
-
+.tournament-row{
+    display: grid;
+    gap: 2.5rem;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    justify-content: center;
+    width: 100%;
+}
 .tournaments-section > h2 {
   text-align: center;
   margin-bottom: 2rem;
@@ -647,16 +654,23 @@ ol {
 
 .tournament-item {
   background: #252525;
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 1rem 0.2rem var(--black1);
 }
 
 .tournament-item .ti-notic {
   display: inline-block;
-  padding: 8px 21px;
-  font-size: 12px;
+  position: relative;
+  top: -0.5rem;
+  left: 1rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #131313;
   text-transform: uppercase;
   background: #ffb320;
+  box-shadow: 0 0 1rem 0.2rem var(--black1);
 }
 
 .tournament-item .ti-content {
@@ -728,9 +742,51 @@ background: linear-gradient(#3B3B3B, #333333);
 
 
 .review-section {
-  background-position: right top;
+  background: linear-gradient(#333333, #3B3B3B);
+  padding: 3rem 0;
+}
+.review-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.card-body{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.list-group{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.list-group-item, .list-group{
+  border-radius: 0.5rem;
+}
+.list-group-item{
+  background-color: #3B3B3B;
+  color: var(--white1);
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
 }
 
+.review-container{
+
+  padding: 0;
+  width: 100%;
+}
+.review-card{
+  background: linear-gradient(#222222, #333333);
+  display: flex;
+  justify-content: center;
+}
 .review-item .review-cover {
   position: relative;
   margin-bottom: 30px;
@@ -796,8 +852,11 @@ background: linear-gradient(#3B3B3B, #333333);
   background-image: url("../img/pattern.png");
   background-repeat: repeat;
   padding: 72px 0;
+  box-shadow: inset 0 0 2rem 0.4em #00000077;
 }
-
+.footer-top-row{
+  justify-content: center;
+}
 .footer-top-section .container {
   position: relative;
 }
@@ -809,9 +868,16 @@ background: linear-gradient(#3B3B3B, #333333);
   z-index: 2;
 }
 
-.footer-logo img {
-  margin-bottom: 35px;
+.footer-logo {
+  flex-direction: column;
+  margin-bottom: 3rem;
 }
+
+.footer-logo > img{
+  width: 10rem;
+  height: 10rem;
+}  
+
 
 .footer-widget {
   padding: 40px 30px 7px;
@@ -923,6 +989,9 @@ background: linear-gradient(#3B3B3B, #333333);
   margin-left: 30px;
 }
 
+.footer-text{
+  text-align: center;
+}
 .copyright {
   float: left;
   margin-bottom: 0;
@@ -1404,9 +1473,6 @@ background: linear-gradient(#3B3B3B, #333333);
   .review-item {
     margin-bottom: 63px;
   }
-  .footer-logo {
-    margin-bottom: 50px;
-  }
   .latest-blog .lb-item .lb-thumb {
     width: 80px;
     height: 80px;
@@ -1425,6 +1491,15 @@ background: linear-gradient(#3B3B3B, #333333);
   .header-section {
     overflow: visible;
     padding: 23px 0;
+  }
+  .tournament-row{
+    grid-template: 1fr 1fr 1fr 1fr / 1fr;
+  }
+  .presentention-div {
+    padding: 10rem 0;
+  }
+  .presentention-div h1{
+    font-size: 3rem;
   }
   .header-section .container {
     position: relative;
@@ -1488,9 +1563,7 @@ background: linear-gradient(#3B3B3B, #333333);
   .review-item {
     margin-bottom: 63px;
   }
-  .footer-logo {
-    margin-bottom: 50px;
-  }
+
   .footer-top-bg {
     display: none;
   }
