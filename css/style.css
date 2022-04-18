@@ -338,7 +338,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  box-shadow: inset 0 0 2rem 0.4em #00000077;  
+  box-shadow: inset 0 0 2rem 0.4em #00000077;
   display: flex;
   min-height: 100vh;
   padding: 0 5rem;
@@ -457,28 +457,28 @@ ol {
   Latest News section
 -----------------------*/
 
-.latest-news-section {
+.latest-championships-section {
   overflow: hidden;
   display: block;
   clear: both;
-  background: #131313;
-  padding: 24px 0;
+  background: var(--black1);
+  padding: 1.5rem 0;
   position: relative;
 }
 
-.ln-title {
+.lc-title {
   position: absolute;
   height: 100%;
   width: 29%;
   left: 0;
   top: 0;
   text-align: right;
-  padding-top: 24px;
-  padding-right: 66px;
-  font-size: 18px;
+  padding-top: 1.5rem;
+  padding-right: 5rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  color: #fff;
-  background: #ffb320;
+  color: var(--white1);
+  background: var(--yellow1);
   z-index: 1;
 }
 
@@ -626,6 +626,13 @@ ol {
 .tournaments-section {
   background-image: url("../img/pattern.png");
   background-repeat: repeat;
+  box-shadow: inset 0 0 2rem 0.4em #00000077;
+}
+
+.tournaments-section > h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--white1);
 }
 
 .tournament-title {
@@ -698,8 +705,27 @@ ol {
 }
 
 /*----------------------
+  Results Section
+------------------------*/
+.results-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #3B3B3B;
+  
+background: linear-gradient(#3B3B3B, #333333);
+
+}
+
+.results-title{
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--white1);
+}
+
+/*----------------------
   Review Section
 ------------------------*/
+
 
 .review-section {
   background-position: right top;
