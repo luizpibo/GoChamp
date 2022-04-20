@@ -1,0 +1,508 @@
+.presentention {
+  align-items: center;
+  background-image: url("/img/e-sports.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 2rem 0.4em #00000077;
+  display: flex;
+  min-height: 100vh;
+  padding: 0 5rem;
+  color: var(--white1);
+}
+
+.presentention h1 {
+  font-family: "Permanent Marker", cursive;
+}
+
+.presentention p {
+  font-size: 1.2rem;
+}
+
+.presentention-div {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.presentention p h1 {
+  text-shadow: 0 0 1rem #000;
+}
+
+.hero-slider .hs-item {
+  height: 865px;
+  display: table;
+  width: 100%;
+}
+
+.hero-slider .hs-text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.hero-slider .hs-text h2 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 60px;
+  margin-bottom: 30px;
+  position: relative;
+  top: -80px;
+  opacity: 0;
+}
+
+.hero-slider .hs-text h2 span {
+  color: #ffb320;
+}
+
+.hero-slider .hs-text p {
+  color: #fff;
+  margin-bottom: 30px;
+  position: relative;
+  position: relative;
+  top: -90px;
+  opacity: 0;
+}
+
+.hero-slider .hs-text .site-btn {
+  position: relative;
+  top: -100px;
+  opacity: 0;
+}
+
+.hero-slider .owl-item.active .hs-item h2,
+.hero-slider .owl-item.active .hs-item p,
+.hero-slider .owl-item.active .hs-item .site-btn {
+  top: 0;
+  opacity: 1;
+}
+
+.hero-slider .owl-item.active .hs-item h2 {
+  -webkit-transition: all 0.5s ease 1s;
+  -o-transition: all 0.5s ease 1s;
+  transition: all 0.5s ease 1s;
+}
+
+.hero-slider .owl-item.active .hs-item p {
+  -webkit-transition: all 0.5s ease 0.8s;
+  -o-transition: all 0.5s ease 0.8s;
+  transition: all 0.5s ease 0.8s;
+}
+
+.hero-slider .owl-item.active .hs-item .site-btn {
+  -webkit-transition: all 0.5s ease 0.6s;
+  -o-transition: all 0.5s ease 0.6s;
+  transition: all 0.5s ease 0.6s;
+}
+
+.hero-slider .owl-dots {
+  position: relative;
+  max-width: 1146px;
+  margin: -33px auto 0;
+  top: -67px;
+  z-index: 5;
+}
+
+.hero-slider .owl-dots .owl-dot {
+  display: inline-block;
+  margin-right: 13px;
+  width: 33px;
+  height: 33px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 7px;
+  border-radius: 40px;
+  background: #dbe2ec;
+}
+
+.hero-slider .owl-dots .owl-dot.active {
+  background: #ffb320;
+}
+
+/*---------------------
+    Latest News section
+  -----------------------*/
+
+.latest-championships-section {
+  overflow: hidden;
+  display: block;
+  clear: both;
+  background: var(--black1);
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+.lc-title {
+  position: absolute;
+  height: 100%;
+  width: 29%;
+  left: 0;
+  top: 0;
+  text-align: right;
+  padding-top: 1.5rem;
+  padding-right: 5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--white1);
+  background: var(--yellow1);
+  z-index: 1;
+}
+
+.news-ticker {
+  width: 71%;
+  float: right;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.news-ticker-contant .nt-item {
+  margin-right: 35px;
+  color: #fff;
+  display: inline-block;
+}
+
+.news-ticker-contant .nt-item span {
+  margin-right: 35px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  padding: 4px 20px;
+}
+
+.news-ticker-contant .nt-item span.new {
+  background: #ff205f;
+}
+
+.news-ticker-contant .nt-item span.strategy {
+  background: #4eae60;
+}
+
+.news-ticker-contant .nt-item span.racing {
+  background: #694eae;
+}
+
+/*------------------
+    Feature Section
+  ---------------------*/
+
+.feature-item {
+  height: 415px;
+  position: relative;
+}
+
+.feature-item:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #000;
+  opacity: 0.65;
+}
+
+.feature-item .cata {
+  position: relative;
+  margin-top: 28px;
+  margin-left: 29px;
+  z-index: 3;
+}
+
+.feature-item .fi-content {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 0 26px 24px;
+  z-index: 2;
+}
+
+.feature-item .fi-content h5 {
+  margin-bottom: 18px;
+}
+
+.feature-item .fi-content .fi-comment {
+  font-size: 12px;
+  opacity: 0.54;
+}
+
+/*----------------------
+    Recent Game Section
+  ------------------------*/
+
+.recent-game-section {
+  background-color: #eef2f6;
+  border-top: 1px solid #d6dee7;
+  border-bottom: 1px solid #d6dee7;
+}
+
+.recent-game-item .rgi-thumb {
+  height: 204px;
+  padding: 25px 28px;
+}
+
+.recent-game-item .rgi-content {
+  padding: 34px 22px 20px;
+  background: #fff;
+  border: 1px solid #d6dee7;
+  border-top: none;
+  position: relative;
+}
+
+.recent-game-item .rgi-content h5 {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.recent-game-item .rgi-content .comment {
+  font-size: 12px;
+  color: #737373;
+}
+
+.recent-game-item .rgi-extra {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70px;
+}
+
+.recent-game-item .rgi-extra .rgi-star,
+.recent-game-item .rgi-extra .rgi-heart {
+  height: 35px;
+  width: 35px;
+  float: left;
+  display: block;
+  padding: 6px 8px 0;
+}
+
+.recent-game-item .rgi-extra .rgi-star {
+  background: #ffb320;
+}
+
+.recent-game-item .rgi-extra .rgi-heart {
+  background: #ff205f;
+}
+
+/*----------------------
+    Tournaments Section
+  ------------------------*/
+
+.tournaments-section {
+  background-image: url("../img/pattern.png");
+  background-repeat: repeat;
+  box-shadow: inset 0 0 2rem 0.4em #00000077;
+}
+.tournament-row {
+  display: grid;
+  gap: 2.5rem;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  justify-content: center;
+  width: 100%;
+}
+.tournaments-section > h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--white1);
+}
+
+.tournament-title {
+  display: inline-block;
+  padding: 7px 25px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  background: #fb6e10;
+}
+
+.tournament-item {
+  background: #252525;
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 1rem 0.2rem var(--black1);
+}
+
+.tournament-item .ti-notic {
+  display: inline-block;
+  position: relative;
+  top: -0.5rem;
+  left: 1rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #131313;
+  text-transform: uppercase;
+  background: #ffb320;
+  box-shadow: 0 0 1rem 0.2rem var(--black1);
+}
+
+.tournament-item .ti-content {
+  padding: 38px 24px;
+  overflow: hidden;
+}
+
+.tournament-item .ti-thumb {
+  width: 168px;
+  height: 178px;
+  float: left;
+}
+
+.tournament-item .ti-text {
+  padding-left: 195px;
+}
+
+.tournament-item .ti-text h4 {
+  color: #ffb320;
+  margin-bottom: 20px;
+}
+
+.tournament-item .ti-text ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.tournament-item .ti-text ul li {
+  color: #fff;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.tournament-item .ti-text ul li span {
+  color: #9a9a9a;
+}
+
+.tournament-item .ti-text p {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.tournament-item .ti-text p span {
+  font-weight: 500;
+  color: #ffb320;
+}
+
+/*----------------------
+    Results Section
+  ------------------------*/
+.results-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #3b3b3b;
+
+  background: linear-gradient(#3b3b3b, #333333);
+}
+
+.results-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--white1);
+}
+
+/*----------------------
+    Review Section
+  ------------------------*/
+
+.review-section {
+  background: linear-gradient(#333333, #3b3b3b);
+  padding: 3rem 0;
+}
+.review-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.list-group-item,
+.list-group {
+  border-radius: 0.5rem;
+}
+.list-group-item {
+  background-color: #3b3b3b;
+  color: var(--white1);
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.review-container {
+  padding: 0;
+  width: 100%;
+}
+.review-card {
+  background: linear-gradient(#222222, #333333);
+  display: flex;
+  justify-content: center;
+}
+.review-item .review-cover {
+  position: relative;
+  margin-bottom: 30px;
+  height: 345px;
+}
+
+.review-item .review-cover .score {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  top: -27px;
+  left: 26px;
+  padding-top: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.review-item .review-cover .score.yellow {
+  background: #ffb320;
+}
+
+.review-item .review-cover .score.purple {
+  background: #694eae;
+}
+
+.review-item .review-cover .score.pink {
+  background: #ff20ae;
+}
+
+.review-item .review-cover .score.green {
+  background: #4eae60;
+}
+
+.review-item .review-text {
+  text-align: center;
+}
+
+.review-item .review-text h5 {
+  margin-bottom: 20px;
+}
+
+.review-item .review-text p {
+  margin-bottom: 0;
+}
+
+.review-item .rating {
+  margin-bottom: 20px;
+}
+
+.review-item .rating i {
+  font-size: 12px;
+}

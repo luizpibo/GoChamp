@@ -1,0 +1,265 @@
+/*----------------------
+  Footer top Section
+------------------------*/
+.footer-top-section {
+  background-image: url("../img/pattern.png");
+  background-repeat: repeat;
+  padding: 72px 0;
+  box-shadow: inset 0 0 2rem 0.4em #00000077;
+}
+.footer-top-row {
+  justify-content: center;
+}
+.footer-top-section .container {
+  position: relative;
+}
+
+.footer-top-bg {
+  position: absolute;
+  left: -30px;
+  bottom: -85px;
+  z-index: 2;
+}
+
+.footer-logo {
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.footer-logo > img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.footer-widget {
+  padding: 40px 30px 7px;
+  background: #252525;
+  border: 1px solid #4a4a4a;
+}
+
+.footer-widget .fw-title {
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.latest-blog .lb-item {
+  margin-bottom: 23px;
+  overflow: hidden;
+}
+
+.latest-blog .lb-item .lb-thumb {
+  width: 97px;
+  height: 97px;
+  float: left;
+}
+
+.latest-blog .lb-item .lb-content {
+  padding-left: 110px;
+}
+
+.latest-blog .lb-item .lb-content .lb-date {
+  font-size: 12px;
+  color: #ffb320;
+  margin-bottom: 8px;
+}
+
+.latest-blog .lb-item .lb-content p {
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: #d3d3d3;
+}
+
+.latest-blog .lb-item .lb-content .lb-author {
+  font-size: 12px;
+  color: #d3d3d3;
+  opacity: 0.45;
+}
+
+.top-comment {
+  overflow: hidden;
+}
+
+.top-comment .tc-item {
+  margin-bottom: 23px;
+  overflow: hidden;
+}
+
+.top-comment .tc-item .tc-thumb {
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  float: left;
+}
+
+.top-comment .tc-item .tc-content {
+  padding-left: 100px;
+}
+
+.top-comment .tc-item .tc-content p {
+  font-size: 12px;
+  color: #d3d3d3;
+  margin-bottom: 5px;
+}
+
+.top-comment .tc-item .tc-content p a {
+  color: #ff205f;
+}
+
+.top-comment .tc-item .tc-content p span {
+  color: #7a7a7a;
+}
+
+.top-comment .tc-item .tc-content .tc-date {
+  font-size: 12px;
+  color: #ffb320;
+}
+
+/*----------------------
+    Footer Section
+  ------------------------*/
+
+.footer-section {
+  padding: 18px 0 16px;
+  overflow: hidden;
+  background: #252525;
+}
+
+.footer-menu {
+  list-style: none;
+  float: right;
+}
+
+.footer-menu li {
+  display: inline;
+}
+
+.footer-menu li a {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #aeaeae;
+  margin-left: 30px;
+}
+
+.footer-text {
+  text-align: center;
+}
+.copyright {
+  float: left;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #aeaeae;
+}
+
+/*------------------
+    Other Pages
+  --------------------
+  ====================*/
+
+.page-info-section {
+  height: 499px;
+  position: relative;
+}
+
+.page-info-section .pi-content {
+  position: absolute;
+  width: 100%;
+  bottom: 65px;
+  left: 0;
+  z-index: 2;
+}
+
+.page-info-section .pi-content h2 {
+  font-size: 60px;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.site-pagination {
+  padding-top: 50px;
+}
+
+.site-pagination a,
+.site-pagination span {
+  width: 33px;
+  height: 33px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 7px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50%;
+  color: #131313;
+  margin-right: 10px;
+}
+
+.site-pagination .active {
+  background: #ffb320;
+}
+
+.site-pagination.sp-style-2 a,
+.site-pagination.sp-style-2 span {
+  background: #e5e5e5;
+}
+
+.site-pagination.sp-style-2 .active {
+  background: #ffb320;
+}
+
+.widget-item {
+  margin-bottom: 73px;
+}
+
+.widget-item:last-child {
+  margin-bottom: 0;
+}
+
+.widget-item .widget-title {
+  margin-bottom: 40px;
+}
+
+.widget-item .latest-blog .lb-item .lb-content p,
+.widget-item .top-comment .tc-item .tc-content p {
+  color: #131313;
+}
+
+.widget-item .latest-blog .lb-item .lb-content .lb-author {
+  color: #737373;
+}
+
+.widget-item .top-comment .tc-item .tc-content {
+  padding-right: 20px;
+}
+
+.widget-item .review-item {
+  background: #eff2f5;
+}
+
+.widget-item .review-item .review-text {
+  padding: 0 35px 20px;
+}
+
+.search-widget {
+  position: relative;
+}
+
+.search-widget input {
+  width: 100%;
+  height: 41px;
+  border: 1px solid #d6dee7;
+  padding-left: 22px;
+  padding-right: 45px;
+  font-size: 12px;
+}
+
+.search-widget button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background: none;
+  border: none;
+  padding-right: 15px;
+  color: #878787;
+  cursor: pointer;
+}
