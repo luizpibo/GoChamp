@@ -120,8 +120,8 @@
 }
 
 /*---------------------
-    Latest News section
-  -----------------------*/
+      Latest News section
+    -----------------------*/
 
 .latest-championships-section {
   overflow: hidden;
@@ -184,8 +184,8 @@
 }
 
 /*------------------
-    Feature Section
-  ---------------------*/
+      Feature Section
+    ---------------------*/
 
 .feature-item {
   height: 415px;
@@ -229,8 +229,8 @@
 }
 
 /*----------------------
-    Recent Game Section
-  ------------------------*/
+      Recent Game Section
+    ------------------------*/
 
 .recent-game-section {
   background-color: #eef2f6;
@@ -286,8 +286,8 @@
 }
 
 /*----------------------
-    Tournaments Section
-  ------------------------*/
+      Tournaments Section
+    ------------------------*/
 
 .tournaments-section {
   background-image: url("../img/pattern.png");
@@ -384,8 +384,8 @@
 }
 
 /*----------------------
-    Results Section
-  ------------------------*/
+      Results Section
+    ------------------------*/
 .results-section {
   display: flex;
   flex-direction: column;
@@ -401,8 +401,8 @@
 }
 
 /*----------------------
-    Review Section
-  ------------------------*/
+      Review Section
+    ------------------------*/
 
 .review-section {
   background: linear-gradient(#333333, #3b3b3b);
