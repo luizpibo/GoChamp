@@ -1,26 +1,6 @@
 /*---------------------
   Helper CSS
 -----------------------*/
-.section-title {
-  text-align: center;
-  margin-bottom: 75px;
-}
-
-.section-title h2 {
-  padding-top: 10px;
-  font-size: 36px;
-}
-
-.set-bg {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-}
-
-.spad {
-  padding-top: 97px;
-  padding-bottom: 97px;
-}
 
 .text-white h1,
 .text-white h2,
@@ -35,41 +15,10 @@
   color: #fff;
 }
 
-.rating i {
-  color: #fbb710;
-}
-
-.rating .is-fade {
-  color: #e0e3e4;
-}
 
 /*---------------------
   Commom elements
 -----------------------*/
-
-/* buttons */
-.site-btn {
-  display: inline-block;
-  text-align: center;
-  font-size: 15px;
-  color: var(--black1);
-  padding: 16px 30px;
-  min-width: 153px;
-  border-radius: 50px;
-  font-weight: 500;
-  border: none;
-  background: var(--yellow1);
-  cursor: pointer;
-}
-
-.site-btn.btn-sm {
-  padding: 10px 30px;
-  min-width: 163px;
-}
-
-.site-btn:hover {
-  color: var(--black1);
-}
 
 .cata {
   display: inline-block;
@@ -94,69 +43,6 @@
 
 .cata.adventure {
   background: #40abf5;
-}
-
-/* Preloder */
-#preloder {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999999;
-  background: #fff;
-}
-
-.loader {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -13px;
-  margin-left: -13px;
-  border-radius: 60px;
-  animation: loader 0.8s linear infinite;
-  -webkit-animation: loader 0.8s linear infinite;
-}
-
-@keyframes loader {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    border: 4px solid #f44336;
-    border-left-color: transparent;
-  }
-  50% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-    border: 4px solid #673ab7;
-    border-left-color: transparent;
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-    border: 4px solid #f44336;
-    border-left-color: transparent;
-  }
-}
-
-@-webkit-keyframes loader {
-  0% {
-    -webkit-transform: rotate(0deg);
-    border: 4px solid #f44336;
-    border-left-color: transparent;
-  }
-  50% {
-    -webkit-transform: rotate(180deg);
-    border: 4px solid #673ab7;
-    border-left-color: transparent;
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    border: 4px solid #f44336;
-    border-left-color: transparent;
-  }
 }
 
 /*-----------------
