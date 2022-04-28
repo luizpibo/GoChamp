@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="stylesheets/header.css" />
     <link rel="stylesheet" href="stylesheets/footer.css" />
     <link rel="stylesheet" href="stylesheets/home.css" />
+    <link rel="stylesheet" href="stylesheets/about.css" />
+    <link rel="stylesheet" href="stylesheets/campeonatos.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!--[if lt IE 9]>
@@ -64,9 +66,9 @@
         <!-- site menu -->
         <nav class="main-menu">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="review.html">Sobre</a></li>
-            <li><a href="categories.html">Campeonatos</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+            <li><a href="/cadastrar-campeonato">Cadastrar Campeonato</a></li>
             <!-- <li><a href="community.html">Forums</a></li>
             <li><a href="contact.html">Contact</a></li> -->
           </ul>
@@ -80,20 +82,19 @@
     </header>
 
     {{{body}}}
-
     <section class="footer-top-section">
-      <div class="container">
+      <div class="container-fluid" data-aos="fade-in">
         <div class="footer-top-bg">
           <img src="img/footer-top-bg.png" alt="" />
         </div>
-        <div class="row footer-top-row">
+        <div class="row justify-content-evenly">
           <div class="col-lg-4">
             <div class="div-logo footer-logo">
               <img src="img/medalha.png" alt="Logo GoChamp" />
               <h2 class="text-logo">GoChamp</h2>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-4 col-md-6 aling-self-end">
             <div class="footer-widget">
               <h4 class="fw-title">Comentários</h4>
               <div class="top-comment">
@@ -174,7 +175,6 @@
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
       </p>
     </footer>
-
     <!--====== Javascripts & Jquery ======-->
     <script src="javascripts/jquery-3.2.1.min.js"></script>
     <script src="javascripts/bootstrap.min.js"></script>

@@ -8,8 +8,6 @@
   /* background-attachment: fixed; */
   height: 100%;
   max-height: 1084px;
-  position: relative;
-  padding: 0 5rem;
 }
 
 .presentention p {
@@ -29,13 +27,14 @@
   position: relative;
 }
 
+
 .lc-title {
   position: absolute;
   height: 100%;
   width: 29%;
   left: 0;
   top: 0;
-  text-align: right;
+  text-align: center;
   padding-top: 1.5rem;
   padding-right: 5rem;
   font-size: 1.2rem;
@@ -50,6 +49,10 @@
   float: right;
   overflow: hidden;
   display: inline-block;
+}
+
+.nt-item{
+  overflow-x: hidden;
 }
 
 .news-ticker-contant .nt-item {
@@ -113,6 +116,7 @@
   width: fit-content;
   font-weight: bold;
   top: -1rem;
+  left: 2rem;
 }
 
 .card-ultimo_resultados {

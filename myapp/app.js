@@ -11,7 +11,8 @@ var cookieParser = require("cookie-parser");
 //Importando rotas
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
-
+const sobreRouter = require("./routes/sobre");
+const cadastrarCamp = require("./routes/cadastrar-campeonato");
 //Criando aplicação express
 const app = express();
 
@@ -34,7 +35,8 @@ app.use("/", indexRouter);
 
 //Rota users
 app.use("/users", usersRouter);
-
+app.use("/sobre", sobreRouter);
+app.use("/cadastrar-campeonato", cadastrarCamp);
 // catch 404 and forward to error handler(rota 404)
 app.use(function (req, res, next) {
   next(createError(404));

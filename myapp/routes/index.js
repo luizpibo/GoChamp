@@ -89,6 +89,17 @@ const campeonatosDisponiveis = [
     formatoCampeonato: "default",
     linkCampeonato: "#",
   },
+    {
+    id: 8,
+    nome: "Campeonato Rio de Janeiro",
+    jogo: "Counter Strike: Global Offensive",
+    dataInicio: "22/04/2022",
+    dataFim: "02/05/2022",
+    quantidadeTimes: 20,
+    quantidadeTimesInscritos: 01,
+    formatoCampeonato: "default",
+    linkCampeonato: "#",
+  },
 ];
 
 const ultimosResultados = [
@@ -101,9 +112,15 @@ const ultimosResultados = [
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
     premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: [
+      "xxKilerxx",
+      "xxKilerxx",
+      "xxKilerxx",
+    ],
+    url: "#",
   },
   {
-    id: 2,
+    id: 1,
     nome: "Campeonato Brasileiro",
     jogo: "Counter Strike: Global Offensive",
     dataInicio: "11/04/2022",
@@ -111,9 +128,15 @@ const ultimosResultados = [
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
     premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: [
+      "xxKilerxx",
+      "xxKilerxx",
+      "xxKilerxx",
+    ],
+    url: "#",
   },
   {
-    id: 3,
+    id: 1,
     nome: "Campeonato Brasileiro",
     jogo: "Counter Strike: Global Offensive",
     dataInicio: "11/04/2022",
@@ -121,9 +144,15 @@ const ultimosResultados = [
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
     premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: [
+      "xxKilerxx",
+      "xxKilerxx",
+      "xxKilerxx",
+    ],
+    url: "#",
   },
   {
-    id: 4,
+    id: 1,
     nome: "Campeonato Brasileiro",
     jogo: "Counter Strike: Global Offensive",
     dataInicio: "11/04/2022",
@@ -131,9 +160,15 @@ const ultimosResultados = [
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
     premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: [
+      "xxKilerxx",
+      "xxKilerxx",
+      "xxKilerxx",
+    ],
+    url: "#",
   },
   {
-    id: 5,
+    id: 1,
     nome: "Campeonato Brasileiro",
     jogo: "Counter Strike: Global Offensive",
     dataInicio: "11/04/2022",
@@ -141,9 +176,15 @@ const ultimosResultados = [
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
     premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: [
+      "xxKilerxx",
+      "xxKilerxx",
+      "xxKilerxx",
+    ],
+    url: "#",
   },
   {
-    id: 6,
+    id: 1,
     nome: "Campeonato Brasileiro",
     jogo: "Counter Strike: Global Offensive",
     dataInicio: "11/04/2022",
@@ -151,9 +192,15 @@ const ultimosResultados = [
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
     premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: [
+      "xxKilerxx",
+      "xxKilerxx",
+      "xxKilerxx",
+    ],
+    url: "#",
   },
   {
-    id: 7,
+    id: 1,
     nome: "Campeonato Brasileiro",
     jogo: "Counter Strike: Global Offensive",
     dataInicio: "11/04/2022",
@@ -161,9 +208,15 @@ const ultimosResultados = [
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
     premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: [
+      "xxKilerxx",
+      "xxKilerxx",
+      "xxKilerxx",
+    ],
+    url: "#",
   },
   {
-    id: 8,
+    id: 1,
     nome: "Campeonato Brasileiro",
     jogo: "Counter Strike: Global Offensive",
     dataInicio: "11/04/2022",
@@ -171,15 +224,43 @@ const ultimosResultados = [
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
     premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: [
+      "xxKilerxx",
+      "xxKilerxx",
+      "xxKilerxx",
+    ],
+    url: "#",
   },
-]
+  {
+    id: 1,
+    nome: "Campeonato Brasileiro",
+    jogo: "Counter Strike: Global Offensive",
+    dataInicio: "11/04/2022",
+    dataFim: "16/04/2022",
+    quantidadeTimes: 20,
+    criadorCampeonato: "xxKilerxx",
+    premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: [
+      "xxKilerxx",
+      "xxKilerxx",
+      "xxKilerxx",
+    ],
+    url: "#",
+  },
+];
+
 /* GET home page. */
 router.get("/", function (req, res, next) {
   const paginasCampeonato = [
     campeonatosDisponiveis.slice(0, 4),
     campeonatosDisponiveis.slice(4, 8),
   ];
-  res.render("home", { paginasCampeonato: paginasCampeonato, ultimosResultados: ultimosResultados });
+  const paginasResultados = [
+    ultimosResultados.slice(0, 3),
+    ultimosResultados.slice(3, 6),
+    ultimosResultados.slice(6, 9),
+  ];  
+  res.render("home", { paginasCampeonato: paginasCampeonato, ultimosResultados: paginasResultados });
 });
 
 module.exports = router;

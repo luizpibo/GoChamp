@@ -1,6 +1,6 @@
-<section class="row presentention set-bg" data-setbg="img/e-sports.jpeg">
-  <div class="row text-white align-items-center justify-content-center">
-    <div class="container p-4" data-aos="fade-up">
+<!-- apresentacao section -->
+<section class="presentention set-bg row text-white align-items-center justify-content-center w-100 p-0 m-0" data-setbg="img/e-sports.jpeg">
+    <div class="container" data-aos="fade-up">
       <h1>
         A melhor plataforma para gerenciar seus
         <span>Campeonatos</span>
@@ -11,7 +11,6 @@
         campeonatos.
       </p>
     </div>
-  </div>
 </section>
 
 <!-- Latest news section -->
@@ -74,77 +73,34 @@
 <!-- Ultimos resultados -->
 <section class="container-fluid results-section">
   <h2 class="section-title" data-aos="fade-up">Últimos resultados</h2>
-  <div class="container" data-aos="zoom-out-up">
-    <div class="row g-3 justify-content-evenly">
+  <div class="row g-3 justify-content-evenly overflow-hidden">
       {{!-- <div class="grid" style="--bs-gap: 1rem;"> --}}
       {{#each ultimosResultados}}
-      <div class="card-ultimo_resultados inset-shadow col-12 col-md-4 col-lg-4 border border-warning">
-        <h3 class="jogo-ultimos_resultados bg-warning bg-gradient position-relative start-0">{{jogo}}</h3>
-        <h4 class="text-warning" style="text-align: center ">{{nome}}</h4>
-        <div style="padding: 0 0.25rem">
-          <ul class="text-white" style="list-style: none; padding:0">
-            <li><span>Inicio do campeonato: </span> {{dataInicio}}</li>
-            <li><span>Final do campeonato: </span> {{dataFim}} </li>
-            <li><span>Participantes: </span>{{quantidadeTimes}} times</li>
-            <li>
-              <span>Criador do campeonato: </span><a href="#">{{criadorCampeonato}}</a>
-            </li>
-          </ul>
-          <p class="text-white">{{premiacao}}</p>
+        <div class="row g-3 justify-content-evenly" data-aos="zoom-out-up">
+          {{#each this}}
+          <div class="col-12 col-lg-4 ">
+            <div class="card-ultimo_resultados inset-shadow border border-warning">
+              <h3 class="jogo-ultimos_resultados bg-warning bg-gradient position-relative">{{jogo}}</h3>
+              <h4 style="text-align: center "><a href="#" class="text-warning">{{nome}}</a></h4>
+              <div class="d-grid px-3">
+                <ul class="text-white" style="list-style: none; padding:0">
+                  <li><span>Inicio do campeonato: </span> {{dataInicio}}</li>
+                  <li><span>Final do campeonato: </span> {{dataFim}} </li>
+                  <li><span>Participantes: </span>{{quantidadeTimes}} times</li>
+                  <li>
+                    <span>Criador do campeonato: </span><a href="#">{{criadorCampeonato}}</a>
+                  </li>
+                  <li>
+                    Ganhadores: {{#each ganhadores}}<span style="margin-right: 1rem">{{this}}</span>{{/each}}
+                  </li>
+                  <li class="text-white">{{premiacao}}</li>
+                </ul>
+                <a type="button" class="btn btn-warning align-slef-center mb-3" href={{url}}>Link do Campeonato</a>
+              </div>
+            </div>
+          </div>
+          {{/each}}
         </div>
-      </div>
       {{/each}}
-    </div>
-  </div>
-</section>
-
-<!-- Review section -->
-<section class="review-section">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">Jogos de hoje</h2>
-    <div class="review-row" data-aos="fade-down">
-      <div class="card flex-gradient-DarkGrey-bg" style="width: 18rem">
-        <img class="card-img-top" src="img/medalha.png" alt="Card image cap" />
-        <div class="card-body">
-          <h3 class="card-title">CS:GO</h3>
-          <h4>Matilhaça x Detona</h4>
-
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Dust 2: 16 x 10</li>
-            <li class="list-group-item">Inferno: 09 x 16</li>
-            <li class="list-group-item">Nuke: 16 x 10</li>
-          </ul>
-          <a href="#" class="btn btn-primary">Placar completo</a>
-        </div>
-      </div>
-      <div class="card flex-gradient-DarkGrey-bg" style="width: 18rem">
-        <img class="card-img-top" src="img/medalha.png" alt="Card image cap" />
-        <div class="card-body">
-          <h3 class="card-title">CS:GO</h3>
-          <h4>Matilhaça x Detona</h4>
-
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Dust 2: 16 x 10</li>
-            <li class="list-group-item">Inferno: 09 x 16</li>
-            <li class="list-group-item">Nuke: 16 x 10</li>
-          </ul>
-          <a href="#" class="btn btn-primary">Placar completo</a>
-        </div>
-      </div>
-      <div class="card flex-gradient-DarkGrey-bg" style="width: 18rem">
-        <img class="card-img-top" src="img/medalha.png" alt="Card image cap" />
-        <div class="card-body">
-          <h3 class="card-title">CS:GO</h3>
-          <h4>Matilhaça x Detona</h4>
-
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Dust 2: 16 x 10</li>
-            <li class="list-group-item">Inferno: 09 x 16</li>
-            <li class="list-group-item">Nuke: 16 x 10</li>
-          </ul>
-          <a href="#" class="btn btn-primary">Placar completo</a>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
