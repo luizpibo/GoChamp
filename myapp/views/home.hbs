@@ -1,7 +1,4 @@
-<section
-  class="container-fluid presentention set-bg"
-  data-setbg="img/e-sports.jpeg"
->
+<section class="container-fluid presentention set-bg" data-setbg="img/e-sports.jpeg">
   <div class="row h-100 text-white align-items-center justify-content-center">
     <div class="container p-4" data-aos="fade-up">
       <h1>
@@ -37,248 +34,71 @@
     </div>
   </div>
 </section>
-<!-- Latest news section end -->
 
 <!-- campeonatos disponiveis -->
-<section
-  class="container-fluid inset-shadow set-bg py-5"
-  data-setbg="img/pattern.png"
->
-  <div
-    id="multi-item-example"
-    class="carousel slide carousel-multi-item"
-    data-ride="carousel"
-    data-aos="fade-up"
-  >
+<section class="container-fluid inset-shadow set-bg py-5" data-setbg="img/pattern.png">
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-aos="fade-up">
     <h2 class="section-title">Campeonatos disponiveis</h2>
     <ol class="carousel-indicators">
-      <li
-        data-target="#multi-item-example"
-        data-slide-to="0"
-        class="active"
-      ></li>
-      <li data-target="#multi-item-example" data-slide-to="1"></li>
+      <li data-target="#multi-item-example" data-slide-to="0" class="active"/>
+      <li data-target="#multi-item-example" data-slide-to="1"/>
     </ol>
     <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active">
-        <div class="row">
-          <div
-            class="col-12 col-md-3 h-100 set-bg"
-            data-setbg="img/medalha.png"
-          >
-            <div class="fi-content text-white">
-              <span class="cata new">CS:GO</span>
-              <h5><a href="#">Campeonato do rafinha</a></h5>
-              <div class="fi-div">
-                <p>8/10 times</p>
-                <a type="button" class="btn btn-primary" href="#">
-                  Inscrever-se
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-12 col-md-3 h-100 set-bg"
-            data-setbg="img/medalha.png"
-          >
-            <div class="fi-content text-white">
-              <span class="cata strategy">League of legends</span>
-              <h5><a href="#">Campeonato do ferinha</a></h5>
-              <div class="fi-div">
+      {{#each paginasCampeonato}}
+        <div class="carousel-item {{#if @first}}active{{/if}}">
+          <div class="row g-3">
+            {{#each this}}
+              <div class="col-md-3" style="height: 25rem;">
+                <div class="col-12 col-md-3 h-100 w-100 set-bg" data-setbg="img/medalha.png" >
+                  <div class="fi-content text-white">
+                    <span class="cata strategy">{{jogo}}</span>
+                    <h5><a href="#">{{nome}}</a></h5>
+                    <div class="fi-div">
+                      <p>{{quantidadeTimesInscritos}}/{{quantidadeTimes}} times</p>
 
-                <p>2/10 times</p>
-                <a type="button" class="btn btn-primary">
-                  Inscrever-se
-                </a>
+                      <a type="button" class="btn btn-primary" href="#">
+                        Inscrever-se
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div
-            class="col-12 col-md-3 h-100 set-bg"
-            data-setbg="img/medalha.png"
-          >
-            <div class="fi-content text-white">
-              <span class="cata new">Valorant</span>
-              <h5><a href="#">Campeonato taguatinga</a></h5>
-              <div class="fi-div">
-                <p>5/15 times</p>
-                <button type="button" class="btn btn-primary">
-                  Inscrever-se
-                </button>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-12 col-md-3 h-100 set-bg"
-            data-setbg="img/medalha.png"
-          >
-            <div class="fi-content text-white">
-              <span class="cata racing">street figther</span>
-              <h5><a href="#">Campeonato gama</a></h5>
-              <div class="fi-div">
-                <p>10/12 players</p>
-                <button type="button" class="btn btn-primary">
-                  Inscrever-se
-                </button>
-              </div>
-            </div>
+            {{/each}}
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <div class="row">
-          <div
-            class="col-12 col-md-3 h-100 set-bg"
-            data-setbg="img/medalha.png"
-          >
-            <div class="fi-content text-white">
-              <span class="cata new">CS:GO</span>
-              <h5><a href="#">Campeonato do rafinha</a></h5>
-              <div class="fi-div">
-                <p>8/10 times</p>
-                <a type="button" class="btn btn-primary" href="#">
-                  Inscrever-se
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-12 col-md-3 h-100 set-bg"
-            data-setbg="img/medalha.png"
-          >
-            <div class="fi-content text-white">
-              <span class="cata strategy">League of legends</span>
-              <h5><a href="#">Campeonato do ferinha</a></h5>
-              <div class="fi-div">
-
-                <p>2/10 times</p>
-                <a type="button" class="btn btn-primary">
-                  Inscrever-se
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-12 col-md-3 h-100 set-bg"
-            data-setbg="img/medalha.png"
-          >
-            <div class="fi-content text-white">
-              <span class="cata new">Valorant</span>
-              <h5><a href="#">Campeonato taguatinga</a></h5>
-              <div class="fi-div">
-                <p>5/15 times</p>
-                <button type="button" class="btn btn-primary">
-                  Inscrever-se
-                </button>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-12 col-md-3 h-100 set-bg"
-            data-setbg="img/medalha.png"
-          >
-            <div class="fi-content text-white">
-              <span class="cata racing">street figther</span>
-              <h5><a href="#">Campeonato gama</a></h5>
-              <div class="fi-div">
-                <p>10/12 players</p>
-                <button type="button" class="btn btn-primary">
-                  Inscrever-se
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{/each}}
     </div>
   </div>
 </section>
+
 <!-- Tournaments section -->
 <section class="results-section">
   <h2 class="section-title" data-aos="fade-up">Últimos resultados</h2>
   <div class="container" data-aos="zoom-out-up">
     {{! <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4"> }}
-    <div class="grid" style="--bs-rows: 2; --bs-columns: 2; --bs-gap: 1.5rem;">
-      <div
-        class="tournament-item inset-shadow set-bg"
-        data-setbg="img/medalha.png"
-      >
-        <h3 class="ti-notic">Counter-Strike: Global Offensive</h3>
-        <div class="ti-content">
-          <div class="ti-text">
-            <h4>Centro oeste league</h4>
-            <ul>
-              <li><span>Inicio do campeonato: </span> 01/04/2022</li>
-              <li><span>Final do campeonato: </span> 15/04/2022</li>
-              <li><span>Participantes: </span>10 times</li>
-              <li>
-                <span>Criador do campeonato: </span><a href="#">XxKillerxX</a>
-              </li>
-            </ul>
-            <p><span>Prêmios: </span>1st R$300, 2st R$150, 3st R$50</p>
+      <div class="grid" style="--bs-rows: 2; --bs-columns: 2; --bs-gap: 1.5rem;">
+        {{#each ultimosResultados}}
+        <div class="tournament-item inset-shadow set-bg" data-setbg="img/medalha.png">
+          <h3 class="ti-notic">{{jogo}}</h3>
+          <div class="ti-content">
+            <div class="ti-text">
+              <h4>{{nome}}</h4>
+              <ul>
+                <li><span>Inicio do campeonato: </span> {{dataInicio}}</li>
+                <li><span>Final do campeonato: </span> {{dataFim}} </li>
+                <li><span>Participantes: </span>{{quantidadeTimes}} times</li>
+                <li>
+                  <span>Criador do campeonato: </span><a href="#">{{criadorCampeonato}}</a>
+                </li>
+              </ul>
+              <p><span>Prêmios: </span>{{premiacao}}</p>
+            </div>
           </div>
         </div>
+        {{/each}}
       </div>
-      <div
-        class="tournament-item inset-shadow set-bg"
-        data-setbg="img/medalha.png"
-      >
-        <h3 class="ti-notic">Rocket league</h3>
-        <div class="ti-content">
-          <div class="ti-text">
-            <h4>BR league</h4>
-            <ul>
-              <li><span>Inicio do campeonato: </span> 01/04/2022</li>
-              <li><span>Final do campeonato: </span> 15/04/2022</li>
-              <li><span>Participantes: </span>10 times</li>
-              <li>
-                <span>Criador do campeonato: </span><a href="#">XxKillerxX</a>
-              </li>
-            </ul>
-            <p><span>Prêmios: </span>1st R$300, 2st R$150, 3st R$50</p>
-          </div>
-        </div>
-      </div>
-      <div
-        class="tournament-item inset-shadow set-bg"
-        data-setbg="img/medalha.png"
-      >
-        <h3 class="ti-notic">VALORANT</h3>
-        <div class="ti-content">
-          <div class="ti-text">
-            <h4>Gamers BR</h4>
-            <ul>
-              <li><span>Inicio do campeonato:</span>05/04/2022</li>
-              <li><span>Final do campeonato:</span>16/04/2022</li>
-              <li><span>Participantes:</span> 10 times</li>
-              <li><span>Criador do evento:</span> Admin</li>
-            </ul>
-            <p><span>Prêmios:</span> 1st $2000, 2nd $1000, 3rd $500</p>
-          </div>
-        </div>
-      </div>
-      <div
-        class="tournament-item inset-shadow set-bg"
-        data-setbg="img/medalha.png"
-      >
-        <h3 class="ti-notic">Street figther</h3>
-        <div class="ti-content">
-          <div class="ti-text">
-            <h4>Gamers BR</h4>
-            <ul>
-              <li><span>Inicio do campeonato:</span>05/04/2022</li>
-              <li><span>Final do campeonato:</span>16/04/2022</li>
-              <li><span>Participantes:</span> 10 times</li>
-              <li><span>Criador do evento:</span> Admin</li>
-            </ul>
-            <p><span>Prêmios:</span> 1st $2000, 2nd $1000, 3rd $500</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
-<!-- Tournaments section bg -->
 
 <!-- Review section -->
 <section class="review-section">
