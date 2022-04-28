@@ -1,5 +1,5 @@
-<section class="container-fluid presentention set-bg" data-setbg="img/e-sports.jpeg">
-  <div class="row h-100 text-white align-items-center justify-content-center">
+<section class="row presentention set-bg" data-setbg="img/e-sports.jpeg">
+  <div class="row text-white align-items-center justify-content-center">
     <div class="container p-4" data-aos="fade-up">
       <h1>
         A melhor plataforma para gerenciar seus
@@ -40,63 +40,61 @@
   <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-aos="fade-up">
     <h2 class="section-title">Campeonatos disponiveis</h2>
     <ol class="carousel-indicators">
-      <li data-target="#multi-item-example" data-slide-to="0" class="active"/>
-      <li data-target="#multi-item-example" data-slide-to="1"/>
+      <li data-target="#multi-item-example" data-slide-to="0" class="active" />
+      <li data-target="#multi-item-example" data-slide-to="1" />
     </ol>
     <div class="carousel-inner" role="listbox">
       {{#each paginasCampeonato}}
-        <div class="carousel-item {{#if @first}}active{{/if}}">
-          <div class="row g-3">
-            {{#each this}}
-              <div class="col-md-3" style="height: 25rem;">
-                <div class="col-12 col-md-3 h-100 w-100 set-bg" data-setbg="img/medalha.png" >
-                  <div class="fi-content text-white">
-                    <span class="cata strategy">{{jogo}}</span>
-                    <h5><a href="#">{{nome}}</a></h5>
-                    <div class="fi-div">
-                      <p>{{quantidadeTimesInscritos}}/{{quantidadeTimes}} times</p>
+      <div class="carousel-item {{#if @first}}active{{/if}}">
+        <div class="row g-3">
+          {{#each this}}
+          <div class="col-md-3" style="height: 25rem;">
+            <div class="col-12 col-md-3 h-100 w-100 set-bg" data-setbg="img/medalha.png">
+              <div class="fi-content text-white">
+                <span class="cata strategy">{{jogo}}</span>
+                <h5><a href="#">{{nome}}</a></h5>
+                <div class="fi-div">
+                  <p>{{quantidadeTimesInscritos}}/{{quantidadeTimes}} times</p>
 
-                      <a type="button" class="btn btn-primary" href="#">
-                        Inscrever-se
-                      </a>
-                    </div>
-                  </div>
+                  <a type="button" class="btn btn-primary" href="#">
+                    Inscrever-se
+                  </a>
                 </div>
               </div>
-            {{/each}}
+            </div>
           </div>
+          {{/each}}
         </div>
+      </div>
       {{/each}}
     </div>
   </div>
 </section>
 
-<!-- Tournaments section -->
-<section class="results-section">
+<!-- Ultimos resultados -->
+<section class="container-fluid results-section">
   <h2 class="section-title" data-aos="fade-up">Últimos resultados</h2>
   <div class="container" data-aos="zoom-out-up">
-    {{! <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4"> }}
-      <div class="grid" style="--bs-rows: 2; --bs-columns: 2; --bs-gap: 1.5rem;">
-        {{#each ultimosResultados}}
-        <div class="tournament-item inset-shadow set-bg" data-setbg="img/medalha.png">
-          <h3 class="ti-notic">{{jogo}}</h3>
-          <div class="ti-content">
-            <div class="ti-text">
-              <h4>{{nome}}</h4>
-              <ul>
-                <li><span>Inicio do campeonato: </span> {{dataInicio}}</li>
-                <li><span>Final do campeonato: </span> {{dataFim}} </li>
-                <li><span>Participantes: </span>{{quantidadeTimes}} times</li>
-                <li>
-                  <span>Criador do campeonato: </span><a href="#">{{criadorCampeonato}}</a>
-                </li>
-              </ul>
-              <p><span>Prêmios: </span>{{premiacao}}</p>
-            </div>
-          </div>
+    <div class="row g-3 justify-content-evenly">
+      {{!-- <div class="grid" style="--bs-gap: 1rem;"> --}}
+      {{#each ultimosResultados}}
+      <div class="card-ultimo_resultados inset-shadow col-12 col-md-4 col-lg-4 border border-warning">
+        <h3 class="jogo-ultimos_resultados bg-warning bg-gradient position-relative start-0">{{jogo}}</h3>
+        <h4 class="text-warning" style="text-align: center ">{{nome}}</h4>
+        <div style="padding: 0 0.25rem">
+          <ul class="text-white" style="list-style: none; padding:0">
+            <li><span>Inicio do campeonato: </span> {{dataInicio}}</li>
+            <li><span>Final do campeonato: </span> {{dataFim}} </li>
+            <li><span>Participantes: </span>{{quantidadeTimes}} times</li>
+            <li>
+              <span>Criador do campeonato: </span><a href="#">{{criadorCampeonato}}</a>
+            </li>
+          </ul>
+          <p class="text-white">{{premiacao}}</p>
         </div>
-        {{/each}}
       </div>
+      {{/each}}
+    </div>
   </div>
 </section>
 
