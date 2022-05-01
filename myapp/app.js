@@ -10,18 +10,27 @@ var cookieParser = require("cookie-parser");
 
 //Importando rotas
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
-const sobreRouter = require("./routes/sobre");
-const cadastrarCamp = require("./routes/cadastrar-campeonato");
+const profileRouter = require("./routes/profile");
+const aboutRouter = require("./routes/about");
+const registerChampionshipRouter = require("./routes/register-championship");
+
 //Criando aplicação express
 const app = express();
 
+//Definindo pasta publica
 app.use(express.static('public'));
+
 // view engine setup (difinindo engine de views)
 // view engine setup (difinindo diretório de views)
 app.engine(".hbs", engine);
 app.set("view engine", ".hbs");
 app.set("views", "./views");
+
+//Rotas index
+app.use("/", indexRouter);
+app.use("/profile", profileRouter);
+app.use("/about", aboutRouter);
+app.use("/register-championship", registerChampionshipRouter);
 
 //middleware
 // app.use(logger('dev'));
@@ -30,13 +39,6 @@ app.set("views", "./views");
 // app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
-//Rota index
-app.use("/", indexRouter);
-
-//Rota users
-app.use("/users", usersRouter);
-app.use("/sobre", sobreRouter);
-app.use("/cadastrar-campeonato", cadastrarCamp);
 // catch 404 and forward to error handler(rota 404)
 app.use(function (req, res, next) {
   next(createError(404));

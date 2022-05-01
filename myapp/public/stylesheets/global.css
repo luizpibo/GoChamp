@@ -46,10 +46,8 @@ ol {
   margin: 0;
 }
 
-.flex-gradient-DarkGrey-bg {
+.darkGrey-bg {
   background: linear-gradient(#222222, #333333);
-  display: flex;
-  justify-content: center;
 }
 
 .inset-shadow {
