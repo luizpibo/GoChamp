@@ -36,13 +36,9 @@
 
 <!-- campeonatos disponiveis -->
 <section class="container-fluid inset-shadow set-bg py-5" data-setbg="img/pattern.png">
-  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" data-aos="fade-up">
-    <h2 class="section-title">Campeonatos disponiveis</h2>
-    <ol class="carousel-indicators">
-      <li data-target="#multi-item-example" data-slide-to="0" class="active" />
-      <li data-target="#multi-item-example" data-slide-to="1" />
-    </ol>
-    <div class="carousel-inner" role="listbox">
+  <h2 class="section-title">Campeonatos disponiveis</h2>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-aos="fade-up">
+    <div class="carousel-inner">
       {{#each paginasCampeonato}}
       <div class="carousel-item {{#if @first}}active{{/if}}">
         <div class="row g-3">
@@ -51,10 +47,10 @@
             <div class="col-12 col-md-3 h-100 w-100 set-bg" data-setbg="img/medalha.png">
               <div class="fi-content text-white">
                 <span class="cata strategy">{{jogo}}</span>
-                <h5><a href="#">{{nome}}</a></h5>
-                <div class="fi-div">
-                  <p>{{quantidadeTimesInscritos}}/{{quantidadeTimes}} times</p>
 
+                <div class="fi-div">
+                  <h5><a href="#">{{nome}}</a></h5>
+                  <p>{{quantidadeTimesInscritos}}/{{quantidadeTimes}} times</p>
                   <a type="button" class="btn btn-primary" href="#">
                     Inscrever-se
                   </a>
@@ -67,6 +63,14 @@
       </div>
       {{/each}}
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </section>
 

@@ -18,18 +18,17 @@
     border-radius: 0.5rem;
 }
 
-.form{
+.register-championship_form{
     display: flex;
     flex-direction: column;
     width: 85%;
     gap: 1rem;
     margin: 2rem 0;
-    border: 1px solid var(--yellow1);
     border-radius: 0.5rem;
     padding: 1rem;
 }
 
-.form label {
+.register-championship_form label {
     min-width: 11rem;
     height: 2rem;
     background-color: #3D3D3D;
@@ -39,23 +38,23 @@
     justify-content: center;
     color:#fff;
 }
-.form input {
+
+.register-championship_form input {
     width: 100%;
     border-radius: 0.5rem;
     border: none;
     background: #ffffff33;
     color: #fff;
     padding: 0.5rem 1rem;
-}
-.form-row {
+  }
+
+.register-championship_form-row {
     display: flex;
     align-items: center;
     width: 100%;
     gap: 1rem;
 }
 
-.championship-details{
-}
 .main-title{
     font-size: 2rem;
 }
