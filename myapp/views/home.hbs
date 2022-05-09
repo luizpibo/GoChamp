@@ -1,3 +1,38 @@
+<div id="preloder">
+  <div class="loader"></div>
+</div>
+
+<header class="header-section">
+  <div class="header-container">
+    <div class="div-logo">
+      <a class="site-logo" href="/">
+        <img src="img/medalha.png" width="60px" alt="Logo GoChamp" />
+        <h2 class="text-logo">GoChamp</h2>
+      </a>
+    </div>
+    <!-- responsive -->
+    <div class="nav-switch">
+      <i class="fa fa-bars"></i>
+    </div>
+    <!-- site menu -->
+    <nav class="main-menu">
+      <ul class="m-0">
+        <li><a href="#campeonatos-disponiveis">Campeonatos disponíveis</a></li>
+        <li><a href="#ultimos-resultados">Ultimos resultados</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+
+        <!-- 
+        <li><a href="/">Home</a></li>
+        <li><a href="/register-championship">Campeonatos</a></li>
+        <li><a href="community.html">Forums</a></li>
+        <li><a href="contact.html">Contact</a></li> -->
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register-user">Cadastro</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 <!-- apresentacao section -->
 <section class="presentention set-bg row text-white align-items-center justify-content-center w-100 p-0 m-0" data-setbg="img/e-sports.jpeg">
     <div class="container" data-aos="fade-up">
@@ -35,8 +70,9 @@
 </section>
 
 <!-- campeonatos disponiveis -->
-<section class="container-fluid inset-shadow set-bg py-5" data-setbg="img/pattern.png">
-  <h2 class="section-title">Campeonatos disponiveis</h2>
+<section id="campeonatos-disponiveis" class="footer-top-section py-5 inset-shadow">
+  <div class="container-fluid">
+  <h2 class="section-title"><a name="campeonatos-disponiveis"></a>Campeonatos disponiveis</h2>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-aos="fade-up">
     <div class="carousel-inner">
       {{#each paginasCampeonato}}
@@ -72,11 +108,12 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  </div>
 </section>
 
 <!-- Ultimos resultados -->
-<section class="container-fluid results-section">
-  <h2 class="section-title" data-aos="fade-up">Últimos resultados</h2>
+<section id="ultimos-resultados" class="container-fluid results-section">
+  <h2 class="section-title" data-aos="fade-up"><a name="ultimos-resultados"></a>Últimos resultados</h2>
   <div class="container-fluid pb-4 overflow-hidden">
     <div class="row g-3 justify-content-evenly">
         {{!-- <div class="grid" style="--bs-gap: 1rem;"> --}}
@@ -109,4 +146,19 @@
         {{/each}}
     </div>
   </div>
+</section>
+
+<section class="about text-white" id="sobre">
+    <div class="about-div">
+    <h2 class="about-title"><a name="sobre">ultimos-resultados</a>Sobre nós</h2>
+    <p class="about-text">
+        A equipe começou os trabalhos em 2022 com o intuito de fazer um
+        sistema para um trabalho de faculdade e até então seguimos adicionando
+        novas funcionalidades.
+    </p>
+    <p class="about-text">
+        Nossa equipe está a disposição em caso de duvidas ou sugestões no
+        email <a href="gochamp@gochamp.com">gochamp@gochamp.com</a>.
+    </p>
+    </div>
 </section>

@@ -14,6 +14,7 @@ const profileRouter = require("./routes/profile");
 const aboutRouter = require("./routes/about");
 const registerChampionshipRouter = require("./routes/register-championship");
 const loginRouter = require("./routes/login");
+const registerUser = require("./routes/register-user");
 
 //Criando aplicação express
 const app = express();
@@ -33,6 +34,7 @@ app.use("/profile", profileRouter);
 app.use("/about", aboutRouter);
 app.use("/register-championship", registerChampionshipRouter);
 app.use("/login", loginRouter);
+app.use("/register-user", registerUser);
 //middleware
 // app.use(logger('dev'));
 // app.use(express.json());

@@ -1,11 +1,9 @@
 .header-section {
-  background: #999999aa;
-  backdrop-filter: blur(0.5rem);
-  border-bottom: 1px solid var(--yellow1);
+  background: linear-gradient(180deg, rgba(34,34,34,1) 0%, rgba(34,34,34,0) 100%);
   clear: both;
   overflow: hidden;
   padding: 0.25rem 0;
-  position: fixed;
+  position: absolute;
   width: 100%;
   z-index: 4;
 }
