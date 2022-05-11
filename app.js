@@ -1,5 +1,5 @@
 const hbs = require("express-handlebars");
-const engine = hbs.engine({extname: 'hbs'});
+const engine = hbs.engine({ extname: 'hbs' });
 
 //Importando bibliotecas
 var express = require("express");
@@ -15,7 +15,7 @@ const aboutRouter = require("./routes/about");
 const registerChampionshipRouter = require("./routes/register-championship");
 const loginRouter = require("./routes/login");
 const registerUser = require("./routes/register-user");
-
+const dashboardRouter = require("./routes/dashboard");
 //Criando aplicação express
 const app = express();
 
@@ -35,6 +35,7 @@ app.use("/about", aboutRouter);
 app.use("/register-championship", registerChampionshipRouter);
 app.use("/login", loginRouter);
 app.use("/register-user", registerUser);
+app.use("/dashboard", dashboardRouter);
 //middleware
 // app.use(logger('dev'));
 // app.use(express.json());
