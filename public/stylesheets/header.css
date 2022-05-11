@@ -3,7 +3,7 @@
   clear: both;
   overflow: hidden;
   padding: 0.25rem 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 4;
 }

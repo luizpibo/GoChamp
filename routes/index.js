@@ -11,6 +11,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 10,
     formatoCampeonato: "default",
     linkCampeonato: "#",
+    bg: "img/csgo.png"
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 15,
     formatoCampeonato: "default",
     linkCampeonato: "#",
+    bg: "img/lol.png"
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 05,
     formatoCampeonato: "default",
     linkCampeonato: "#",
+    bg: "img/valorant.png"
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 10,
     formatoCampeonato: "default",
     linkCampeonato: "#",
+    bg: "img/stf5.png"
   },
   {
     id: 5,
@@ -55,6 +59,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 02,
     formatoCampeonato: "default",
     linkCampeonato: "#",
+    bg: "img/csgo.png"
   },
   {
     id: 6,
@@ -66,6 +71,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 05,
     formatoCampeonato: "default",
     linkCampeonato: "#",
+    bg: "img/valorant.png"
   },
   {
     id: 7,
@@ -77,6 +83,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 05,
     formatoCampeonato: "default",
     linkCampeonato: "#",
+    bg: "img/stf5.png"
   },
   {
     id: 8,
@@ -88,17 +95,19 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 01,
     formatoCampeonato: "default",
     linkCampeonato: "#",
+    bg: "img/csgo.png"
   },
-    {
+  {
     id: 8,
     nome: "Campeonato Rio de Janeiro",
-    jogo: "Counter Strike: Global Offensive",
+    jogo: "League of legends",
     dataInicio: "22/04/2022",
     dataFim: "02/05/2022",
     quantidadeTimes: 20,
     quantidadeTimesInscritos: 01,
     formatoCampeonato: "default",
     linkCampeonato: "#",
+    bg: "img/lol.png"
   },
 ];
 

@@ -76,42 +76,46 @@
 <!-- campeonatos disponiveis -->
 <section id="campeonatos-disponiveis" class="footer-top-section py-5 inset-shadow">
   <div class="container-fluid">
-  <h2 class="section-title"><a name="campeonatos-disponiveis"></a>Campeonatos disponiveis</h2>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-aos="fade-up">
-    <div class="carousel-inner">
-      {{#each paginasCampeonato}}
-      <div class="carousel-item {{#if @first}}active{{/if}}">
-        <div class="row g-3">
-          {{#each this}}
-          <div class="col-md-3" style="height: 25rem;">
-            <div class="col-12 col-md-3 h-100 w-100 set-bg" data-setbg="img/medalha.png">
-              <div class="fi-content text-white">
-                <span class="cata strategy">{{jogo}}</span>
+    <div class="row">
+      <h2 class="section-title"><a name="campeonatos-disponiveis"></a>Campeonatos disponiveis</h2>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-aos="fade-up">
+        <div class="carousel-inner py-4">
+          {{#each paginasCampeonato}}
+          <div class="carousel-item {{#if @first}}active{{/if}}">
+            <div class="container-fluid">
+              <div class="row g-4 align-items-center m-0">
+                {{#each this}}
+                <div class="col-md-3 mb-4" style="height: 30rem;">
+                  <div class="col-12 col-md-3 h-100 w-100 set-bg rounded m-2 card-hover" data-setbg={{bg}}>
+                    <div class="fi-content text-white">
+                      {{!-- <h4 class="cata strategy">{{jogo}}</h4> --}}
 
-                <div class="fi-div">
-                  <h5><a href="#">{{nome}}</a></h5>
-                  <p>{{quantidadeTimesInscritos}}/{{quantidadeTimes}} times</p>
-                  <a type="button" class="btn btn-primary" href="#">
-                    Inscrever-se
-                  </a>
+                      <div class="fi-div m-4">
+                        <h5><a href="#" style="color: #fff">{{nome}}</a></h5>
+                        <p>{{quantidadeTimesInscritos}}/{{quantidadeTimes}} times</p>
+                        <a type="button" class="btn btn-warning" href="#">
+                          Inscrever-se
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                {{/each}}
               </div>
             </div>
           </div>
           {{/each}}
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      {{/each}}
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
   </div>
 </section>
 
@@ -151,19 +155,23 @@
     </div>
   </div>
 </section>
+<section class="about container-fluid position-relative overflow-hidden" id="sobre">
+    <img src="img/ryu.png" class="position-absolute ryu-about" data-aos="fade-right"/>
+    <img src="img/csgo_about.png" class="position-absolute csgo-about" data-aos="fade-left"/>
 
-<section class="about text-white" id="sobre">
-    <div class="about-div">
-    <h2 class="about-title"><a name="sobre">ultimos-resultados</a>Sobre nós</h2>
-    <p class="about-text">
-        A equipe começou os trabalhos em 2022 com o intuito de fazer um
-        sistema para um trabalho de faculdade e até então seguimos adicionando
-        novas funcionalidades.
-    </p>
-    <p class="about-text">
-        Nossa equipe está a disposição em caso de duvidas ou sugestões no
-        email <a href="gochamp@gochamp.com">gochamp@gochamp.com</a>.
-    </p>
+    <div class="row text-white about-text-div">
+      <div class="col-12 col-md-6" data-aos="fade-up">
+        <h2 class="about-title"><a name="sobre">ultimos-resultados</a>Sobre nós</h2>
+        <p class="about-text">
+            A equipe começou os trabalhos em 2022 com o intuito de fazer um
+            sistema para um trabalho de faculdade e até então seguimos adicionando
+            novas funcionalidades.
+        </p>
+        <p class="about-text">
+            Nossa equipe está a disposição em caso de duvidas ou sugestões no
+            email <a href="gochamp@gochamp.com">gochamp@gochamp.com</a>.
+        </p>
+      </div>
     </div>
 </section>
 
