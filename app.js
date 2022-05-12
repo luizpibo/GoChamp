@@ -1,3 +1,5 @@
+const db = require('./src/db.js');
+
 const hbs = require("express-handlebars");
 const engine = hbs.engine({ extname: 'hbs' });
 
@@ -18,7 +20,7 @@ const registerUser = require("./routes/register-user");
 const dashboardRouter = require("./routes/dashboard");
 //Criando aplicação express
 const app = express();
-
+db.sync(()=>console.log(`Banco de dados conectado: ${process.env.DB_NAME}`))
 //Definindo pasta publica
 app.use(express.static('public'));
 
