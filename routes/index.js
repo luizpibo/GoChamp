@@ -1,5 +1,8 @@
 var express = require("express");
 var router = express.Router();
+const sequelize = require("../src/db.js");
+const User = require("../src/models/User.js");
+
 const campeonatosDisponiveis = [
   {
     id: 1,
@@ -259,7 +262,7 @@ const ultimosResultados = [
 ];
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/", async function (req, res, next) {
   const paginasCampeonato = [
     campeonatosDisponiveis.slice(0, 4),
     campeonatosDisponiveis.slice(4, 8),
@@ -269,6 +272,14 @@ router.get("/", function (req, res, next) {
     ultimosResultados.slice(3, 6),
     ultimosResultados.slice(6, 9),
   ];  
+
+  try {
+    await sequelize.authenticate();
+    console.log("Conectado com sucesso");
+  } catch (error) {
+      console.log(error);
+  }
+
   res.render("home", { paginasCampeonato: paginasCampeonato, ultimosResultados: paginasResultados });
 });
 

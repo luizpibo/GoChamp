@@ -1,4 +1,4 @@
-const Sequelize = require("sequelize"); // importar o sequelize
+const { Sequelize } = require("sequelize"); // importar o sequelize
 const dotenv = require("dotenv/config.js"); // importar o dotenv para localizar as variáveis de ambiente
 
 const dbName = process.env.DB_NAME; // passar os dados do .env para as constantes
@@ -12,4 +12,5 @@ const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
   host: dbHost, //o host, neste caso estamos com um banco local
 });
 
-export default sequelize; //exportar
+
+module.exports = sequelize; //exportar
