@@ -272,14 +272,6 @@ router.get("/", async function (req, res, next) {
     ultimosResultados.slice(3, 6),
     ultimosResultados.slice(6, 9),
   ];  
-
-  try {
-    await sequelize.authenticate();
-    console.log("Conectado com sucesso");
-  } catch (error) {
-      console.log(error);
-  }
-
   res.render("home", { paginasCampeonato: paginasCampeonato, ultimosResultados: paginasResultados });
 });
 

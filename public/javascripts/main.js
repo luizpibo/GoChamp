@@ -8,7 +8,6 @@
 
 // 'use strict';
 
-console.log('executou essa porra');
 
 $(window).on('load', function() {
 	/*------------------

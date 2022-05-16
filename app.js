@@ -1,14 +1,11 @@
 const db = require('./src/db.js');
 
+//Importando bibliotecas
 const hbs = require("express-handlebars");
 const engine = hbs.engine({ extname: 'hbs' });
-
-//Importando bibliotecas
+const bodyParser = require('body-parser')
 var express = require("express");
 var createError = require("http-errors");
-var path = require("path");
-var logger = require("morgan");
-var cookieParser = require("cookie-parser");
 
 //Importando rotas
 const indexRouter = require("./routes/index");
@@ -18,10 +15,14 @@ const registerChampionshipRouter = require("./routes/register-championship");
 const loginRouter = require("./routes/login");
 const registerUser = require("./routes/register-user");
 const dashboardRouter = require("./routes/dashboard");
+
 //Criando aplicação express
 const app = express();
-db.sync(()=>console.log(`Banco de dados conectado: ${process.env.DB_NAME}`))
+
+db.sync();
+
 //Definindo pasta publica
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 // view engine setup (difinindo engine de views)
