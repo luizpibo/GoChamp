@@ -1,7 +1,5 @@
 var express = require("express");
 var router = express.Router();
-const sequelize = require("../src/db.js");
-const User = require("../src/models/User.js");
 
 const campeonatosDisponiveis = [
   {
