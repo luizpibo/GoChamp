@@ -19,6 +19,14 @@ const Championship = sequelize.define("championship", {
         type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: true,
     },
+    startDate: {
+        type: Sequelize.DATE,
+        allowNull: false,
+    },
+    finishData: {
+        type: Sequelize.DATE,
+        allowNull: false,
+    }
 });
 
 module.exports = Championship;
