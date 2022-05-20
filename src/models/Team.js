@@ -1,6 +1,7 @@
 const sequelize = require("../db");
 const {Sequelize} = require("sequelize");
-const User = sequelize.define("users", {
+
+const Team = sequelize.define("team", {
     id: {
         type: Sequelize.STRING,
         primaryKey: true,
@@ -10,20 +11,14 @@ const User = sequelize.define("users", {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    email: {
+    ownerId: {
         type: Sequelize.STRING,
         allowNull: false,
-        validate: {
-            isEmail: {
-                msg: "Email invalido"
-            },
-
-        }
     },
-    password: {
-        type: Sequelize.STRING,
-        allowNull: false,
+    membersId: {
+        type: Sequelize.ARRAY(Sequelize.STRING),
+        allowNull: true,
     },
 });
 
-module.exports = User
+module.exports = Team;
