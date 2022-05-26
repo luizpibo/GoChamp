@@ -1,9 +1,9 @@
-const db = require('./src/db.js');
+const db = require("./src/db.js");
 
 //Importando bibliotecas
 const hbs = require("express-handlebars");
-const engine = hbs.engine({ extname: 'hbs' });
-const bodyParser = require('body-parser')
+const engine = hbs.engine({ extname: "hbs" });
+const bodyParser = require("body-parser");
 var express = require("express");
 var createError = require("http-errors");
 
@@ -19,11 +19,9 @@ const dashboardRouter = require("./routes/dashboard");
 //Criando aplicação express
 const app = express();
 
-db.sync();
-
 //Definindo pasta publica
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 // view engine setup (difinindo engine de views)
 // view engine setup (difinindo diretório de views)
@@ -48,6 +46,7 @@ app.use("/dashboard", dashboardRouter);
 
 // catch 404 and forward to error handler(rota 404)
 app.use(function (req, res, next) {
+  res.render("404");
   next(createError(404));
 });
 
@@ -61,6 +60,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
 
 module.exports = app;

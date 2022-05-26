@@ -1,41 +1,66 @@
 <section class="darkGrey-bg p-5">
-    <div class="container shadow-lg-warning">
-        <div class="row h-100 align-items-center justify-content-center">
-            <div class="col-lg-6">
-                <div class="login-form border border-warning py-4 px-5 rounded">
-                    <h2 class="text-white">Register</h2>
-                    <form action="/register-user" id="form" class="form" method="POST">
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="name" name="name"type="text" placeholder="meu nome" />
-                            <label for="inputName">Name</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" name="email"
-                                placeholder="exemplo@exemplo.com" />
-                            <label for="inputEmail">Email</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="password" type="password" name="password"
-                                placeholder="degite uma senha" />
-                            <label for="inputPassword">Senha</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="confirmPassword" type="password" name="confirmPassword"
-                                placeholder="confitme uma senha" />
-                            <label for="confirmPassword">Confirme a senha</label>
-                        </div>
-                        <label id="errors"></label>
-                        <button type="submit" class="btn btn-warning btn-block my-3 px-5">Register</button>
-                        <div class="form-group">
-                            <p class="text-muted">
-                                Você possui conta?
-                                <a class="text-warning" href="/login">Login</a>
-                            </p>
-                        </div>
-                    </form>
-                </div>
+  <div class="container shadow-lg-warning">
+    <div class="row h-100 align-items-center justify-content-center">
+      <div class="col-lg-6">
+        <div class="login-form border border-warning py-4 px-5 rounded">
+          <h2 class="text-white">Register</h2>
+          <form action="/register-user" id="form" class="form" method="POST">
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="meu nome"
+              />
+              <label for="inputName">Name</label>
             </div>
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="email"
+                type="email"
+                name="email"
+                placeholder="exemplo@exemplo.com"
+              />
+              <label for="inputEmail">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="password"
+                type="password"
+                name="password"
+                placeholder="degite uma senha"
+              />
+              <label for="inputPassword">Senha</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                class="form-control"
+                id="confirmPassword"
+                type="password"
+                name="confirmPassword"
+                placeholder="confitme uma senha"
+              />
+              <label for="confirmPassword">Confirme a senha</label>
+            </div>
+            <label id="errors">{{errors}}</label>
+            <input
+              type="submit"
+              class="btn btn-warning btn-block my-3 px-5"
+              value="Cadastrar"
+            />
+          </form>
+          <div class="form-group">
+            <p class="text-muted">
+              Você possui conta?
+              <a class="text-warning" href="/login">Login</a>
+            </p>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 <script src="javascripts/confirmPassword.js"></script>
