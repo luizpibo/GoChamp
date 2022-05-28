@@ -1,24 +1,25 @@
 const sequelize = require("../db");
-const {Sequelize} = require("sequelize");
-
+const { Sequelize } = require("sequelize");
+const { DataTypes } = require("sequelize");
 const Team = sequelize.define("team", {
-    id: {
-        type: Sequelize.STRING,
-        primaryKey: true,
-        autoIncrementIdentity: true,
-    },
-    name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    ownerId: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    membersId: {
-        type: Sequelize.ARRAY(Sequelize.STRING),
-        allowNull: true,
-    },
+  id: {
+    type: DataTypes.UUID,
+    defaultValue: Sequelize.UUIDV4,
+    allowNull: false,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  ownerId: {
+    type: DataTypes.UUIDV4,
+    allowNull: false,
+  },
+  membersId: {
+    type: DataTypes.ARRAY(DataTypes.UUIDV4),
+    allowNull: true,
+  },
 });
 
 module.exports = Team;

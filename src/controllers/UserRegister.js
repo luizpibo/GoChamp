@@ -19,7 +19,6 @@ exports.post = async (request, response, next) => {
 
   const md5Password = md5(password);
   const reqUser = {
-    id: "123123123",
     name: name,
     email: email,
     password: md5Password,
