@@ -11,7 +11,7 @@ class CreateUserUseCase {
 
     const user = await User.create({ name, email, password: passwordHash });
 
-    return user;
+    return { menssage: "Usuário criado com sucesso" };
   }
 }
 

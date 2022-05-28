@@ -10,7 +10,7 @@ class CreateUserController {
       password,
     });
 
-    return response.json(user);
+    return response.redirect("/login");
   }
 }
 

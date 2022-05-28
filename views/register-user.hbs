@@ -1,4 +1,4 @@
-<section class="darkGrey-bg p-5">
+<section class="darkGrey-bg">
   <div class="container shadow-lg-warning">
     <div class="row h-100 align-items-center justify-content-center">
       <div class="col-lg-6">
@@ -45,7 +45,11 @@
               />
               <label for="confirmPassword">Confirme a senha</label>
             </div>
-            <label id="errors">{{errors}}</label>
+            <div id="errors" class="errors text-light">
+              <label>
+                {{errors}}
+              </label>
+            </div>
             <input
               type="submit"
               class="btn btn-warning btn-block my-3 px-5"
@@ -63,4 +67,4 @@
     </div>
   </div>
 </section>
-{{!-- <script src="javascripts/confirmPassword.js"></script> --}}
+<script src="javascripts/userRegister.js"></script>
