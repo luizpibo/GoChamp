@@ -21,6 +21,13 @@ const Championship = sequelize.define("championship", {
     type: DataTypes.ARRAY(Sequelize.UUIDV4),
     allowNull: true,
   },
+  limitPlayers: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    validate: {
+      max: 64,
+    }
+  },
   startDate: {
     type: DataTypes.DATE,
     allowNull: false,
