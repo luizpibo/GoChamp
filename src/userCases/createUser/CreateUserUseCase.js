@@ -1,4 +1,4 @@
-const User = require("../../models/User");
+const { Users } = require("../../models");
 const { hash } = require("bcryptjs");
 
 class CreateUserUseCase {
@@ -9,7 +9,7 @@ class CreateUserUseCase {
     }
     const passwordHash = await hash(password, 8);
 
-    const user = await User.create({ name, email, password: passwordHash });
+    const user = await Users.create({ name, email, password: passwordHash });
 
     return { menssage: "Usuário criado com sucesso" };
   }

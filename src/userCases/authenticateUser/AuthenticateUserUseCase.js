@@ -1,4 +1,4 @@
-const User = require("../../models/User");
+const { Users } = require("../../models");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -8,7 +8,7 @@ class AuthenticateUserUseCase {
     const { email, password } = request;
 
     //Verificando se o usuario existe
-    const user = await User.findOne({ email });
+    const user = await Users.findOne({ email });
     if (!user) {
       throw new Error("Email or password incorrect");
     }

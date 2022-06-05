@@ -12,7 +12,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 10,
     formatoCampeonato: "default",
     linkCampeonato: "#",
-    bg: "img/csgo.png"
+    bg: "img/csgo.png",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 15,
     formatoCampeonato: "default",
     linkCampeonato: "#",
-    bg: "img/lol.png"
+    bg: "img/lol.png",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 05,
     formatoCampeonato: "default",
     linkCampeonato: "#",
-    bg: "img/valorant.png"
+    bg: "img/valorant.png",
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 10,
     formatoCampeonato: "default",
     linkCampeonato: "#",
-    bg: "img/stf5.png"
+    bg: "img/stf5.png",
   },
   {
     id: 5,
@@ -60,7 +60,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 02,
     formatoCampeonato: "default",
     linkCampeonato: "#",
-    bg: "img/csgo.png"
+    bg: "img/csgo.png",
   },
   {
     id: 6,
@@ -72,7 +72,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 05,
     formatoCampeonato: "default",
     linkCampeonato: "#",
-    bg: "img/valorant.png"
+    bg: "img/valorant.png",
   },
   {
     id: 7,
@@ -84,7 +84,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 05,
     formatoCampeonato: "default",
     linkCampeonato: "#",
-    bg: "img/stf5.png"
+    bg: "img/stf5.png",
   },
   {
     id: 8,
@@ -96,7 +96,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 01,
     formatoCampeonato: "default",
     linkCampeonato: "#",
-    bg: "img/csgo.png"
+    bg: "img/csgo.png",
   },
   {
     id: 8,
@@ -108,7 +108,7 @@ const campeonatosDisponiveis = [
     quantidadeTimesInscritos: 01,
     formatoCampeonato: "default",
     linkCampeonato: "#",
-    bg: "img/lol.png"
+    bg: "img/lol.png",
   },
 ];
 
@@ -121,12 +121,8 @@ const ultimosResultados = [
     dataFim: "16/04/2022",
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
-    premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
-    ganhadores: [
-      "xxKilerxx",
-      "xxKilerxx",
-      "xxKilerxx",
-    ],
+    premiacao: "1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: ["xxKilerxx", "xxKilerxx", "xxKilerxx"],
     url: "#",
   },
   {
@@ -137,12 +133,8 @@ const ultimosResultados = [
     dataFim: "16/04/2022",
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
-    premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
-    ganhadores: [
-      "xxKilerxx",
-      "xxKilerxx",
-      "xxKilerxx",
-    ],
+    premiacao: "1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: ["xxKilerxx", "xxKilerxx", "xxKilerxx"],
     url: "#",
   },
   {
@@ -153,12 +145,8 @@ const ultimosResultados = [
     dataFim: "16/04/2022",
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
-    premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
-    ganhadores: [
-      "xxKilerxx",
-      "xxKilerxx",
-      "xxKilerxx",
-    ],
+    premiacao: "1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: ["xxKilerxx", "xxKilerxx", "xxKilerxx"],
     url: "#",
   },
   {
@@ -169,12 +157,8 @@ const ultimosResultados = [
     dataFim: "16/04/2022",
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
-    premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
-    ganhadores: [
-      "xxKilerxx",
-      "xxKilerxx",
-      "xxKilerxx",
-    ],
+    premiacao: "1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: ["xxKilerxx", "xxKilerxx", "xxKilerxx"],
     url: "#",
   },
   {
@@ -185,12 +169,8 @@ const ultimosResultados = [
     dataFim: "16/04/2022",
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
-    premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
-    ganhadores: [
-      "xxKilerxx",
-      "xxKilerxx",
-      "xxKilerxx",
-    ],
+    premiacao: "1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: ["xxKilerxx", "xxKilerxx", "xxKilerxx"],
     url: "#",
   },
   {
@@ -201,12 +181,8 @@ const ultimosResultados = [
     dataFim: "16/04/2022",
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
-    premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
-    ganhadores: [
-      "xxKilerxx",
-      "xxKilerxx",
-      "xxKilerxx",
-    ],
+    premiacao: "1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: ["xxKilerxx", "xxKilerxx", "xxKilerxx"],
     url: "#",
   },
   {
@@ -217,12 +193,8 @@ const ultimosResultados = [
     dataFim: "16/04/2022",
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
-    premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
-    ganhadores: [
-      "xxKilerxx",
-      "xxKilerxx",
-      "xxKilerxx",
-    ],
+    premiacao: "1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: ["xxKilerxx", "xxKilerxx", "xxKilerxx"],
     url: "#",
   },
   {
@@ -233,12 +205,8 @@ const ultimosResultados = [
     dataFim: "16/04/2022",
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
-    premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
-    ganhadores: [
-      "xxKilerxx",
-      "xxKilerxx",
-      "xxKilerxx",
-    ],
+    premiacao: "1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: ["xxKilerxx", "xxKilerxx", "xxKilerxx"],
     url: "#",
   },
   {
@@ -249,12 +217,8 @@ const ultimosResultados = [
     dataFim: "16/04/2022",
     quantidadeTimes: 20,
     criadorCampeonato: "xxKilerxx",
-    premiacao:"1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
-    ganhadores: [
-      "xxKilerxx",
-      "xxKilerxx",
-      "xxKilerxx",
-    ],
+    premiacao: "1º lugar: 1.000.000, 2º lugar: 500.000, 3º lugar: 250.000",
+    ganhadores: ["xxKilerxx", "xxKilerxx", "xxKilerxx"],
     url: "#",
   },
 ];
@@ -269,8 +233,11 @@ router.get("/", async function (req, res, next) {
     ultimosResultados.slice(0, 3),
     ultimosResultados.slice(3, 6),
     ultimosResultados.slice(6, 9),
-  ];  
-  res.render("home", { paginasCampeonato: paginasCampeonato, ultimosResultados: paginasResultados });
+  ];
+  res.render("home", {
+    paginasCampeonato: paginasCampeonato,
+    ultimosResultados: paginasResultados,
+  });
 });
 
 module.exports = router;

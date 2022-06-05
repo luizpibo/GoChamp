@@ -15,10 +15,8 @@ const registerChampionshipRouter = require("./routes/register-championship");
 const loginRouter = require("./routes/login");
 const registerUser = require("./routes/register-user");
 const dashboardRouter = require("./routes/dashboard");
-
 //Criando aplicação express
 const app = express();
-
 //Definindo pasta publica
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
