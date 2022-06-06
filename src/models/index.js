@@ -1,13 +1,12 @@
 const sequelize = require("../db");
-const { Sequelize } = require("sequelize");
-const { DataTypes } = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
 
 // User model ---------------------------------------------------------------
 const Users = sequelize.define("users", {
   id: {
     type: DataTypes.UUID,
+    allowNull: false,
     defaultValue: Sequelize.UUIDV4,
-    allowNull: true,
     primaryKey: true,
   },
   name: {
@@ -33,18 +32,14 @@ const Users = sequelize.define("users", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  teamId: {
-    type: DataTypes.UUID,
-    allowNull: true,
-  },
 });
 
 // Teams model ---------------------------------------------------------------
 const Teams = sequelize.define("teams", {
   id: {
     type: DataTypes.UUID,
-    defaultValue: Sequelize.UUIDV4,
     allowNull: false,
+    defaultValue: Sequelize.UUIDV4,
     primaryKey: true,
   },
   name: {
@@ -57,12 +52,39 @@ const Teams = sequelize.define("teams", {
   },
 });
 
+// TeamMembers model ---------------------------------------------------------------
+const TeamMembers = sequelize.define("team_members", {
+  id: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    defaultValue: Sequelize.UUIDV4,
+    primaryKey: true,
+  },
+  userId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+  },
+  teamId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+  },
+  entryDate: {
+    type: DataTypes.DATE,
+    defaultValue: Sequelize.NOW,
+    allowNull: false,
+  },
+  departureDate: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
+});
+
 // Championships  model ---------------------------------------------------------------
 const Championships = sequelize.define("championships", {
   id: {
     type: DataTypes.UUID,
+    allowNull: false,
     defaultValue: Sequelize.UUIDV4,
-    allowNull: true,
     primaryKey: true,
   },
   name: {
@@ -100,22 +122,45 @@ const Championships = sequelize.define("championships", {
 });
 
 // Associations ---------------------------------------------------------------
-Teams.hasMany(Users, { foreignKey: "teamId" });
-Users.belongsTo(Teams);
-// , onDelete: `RESTRICT`
-Users.hasOne(Teams, { foreignKey: "ownerId" });
-Teams.belongsTo(Users);
+//Associacaa entra times e usuarios onde o usuario é o dono do time e o time recebe o id do usuario dono
+try {
+  Users.hasOne(Teams);
+  Teams.belongsTo(Users, { foreignKey: { name: "ownerId" } });
+} catch (e) {
+  console.log("Erro ao criar associação entre tabelas de times e usuarios");
+}
 
-Users.hasMany(Championships, { foreignKey: "ownerId" });
-// Championships.belongsTo(Users);
+//Associacao entre times e usuarios onde um time tem varios usuarios
+try {
+  Users.hasOne(TeamMembers);
+  TeamMembers.belongsTo(Users, { foreignKey: { name: "userId" } });
+  Teams.hasMany(TeamMembers, { foreignKey: { name: "teamId" } });
+  TeamMembers.belongsTo(Teams, { foreignKey: { name: "teamId" } });
+} catch (e) {
+  console.log("Erro ao criar associação entre tabelas de times e usuarios");
+}
 
-// Championships.belongsToMany(Teams, { through: "ChampionshipsTeams" });
-// Teams.belongsToMany(Championships, { through: "ChampionshipsTeams" });
+//Associacao entre campeonatos e times
+try {
+  Teams.belongsToMany(Championships, {
+    through: "championship_teams",
+  });
+  Championships.belongsToMany(Teams, {
+    through: "championship_teams",
+  });
+} catch (e) {
+  console.log("Erro ao criar associação entre tabelas de campeonatos e times");
+}
 
-Users.sync({ force: true });
-Teams.sync({ force: true });
-Championships.sync({ force: true });
+try {
+  // Teams.sync({ force: true });
+  // Championships.sync({ force: true });
+  // Users.sync({ force: true });
+  sequelize.sync();
+} catch (e) {
+  console.log("Erro ao sincronizar tabelas");
+}
 
-module.exports = Championships;
-module.exports = Teams;
 module.exports = Users;
+module.exports = Teams;
+module.exports = Championships;
