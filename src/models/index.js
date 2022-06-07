@@ -50,6 +50,10 @@ const Teams = sequelize.define("teams", {
     type: DataTypes.UUID,
     allowNull: false,
   },
+  game: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 });
 
 // TeamMembers model ---------------------------------------------------------------
@@ -152,6 +156,7 @@ try {
   console.log("Erro ao criar associação entre tabelas de campeonatos e times");
 }
 
+
 try {
   // Teams.sync({ force: true });
   // Championships.sync({ force: true });
@@ -161,6 +166,8 @@ try {
   console.log("Erro ao sincronizar tabelas");
 }
 
-module.exports = Users;
-module.exports = Teams;
-module.exports = Championships;
+module.exports = {
+  Users,
+  Teams,
+  Championships,
+};

@@ -22,10 +22,10 @@ $form.addEventListener("submit", function (e) {
     .then((data) => {
       if (data.error) {
         console.log(data.error);
-        // $errors.innerHTML = data.error;
+        $errors.innerHTML = data.error;
       } else {
         localStorage.setItem("token-GoChamp", data);
-        // window.location.href = "/dashboard";
+        window.location.href = "/dashboard";
       }
     })
     .catch((err) => console.log(err));

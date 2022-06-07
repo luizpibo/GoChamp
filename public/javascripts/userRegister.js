@@ -21,7 +21,7 @@ $form.addEventListener("submit", function (e) {
   }
 
   $errors.innerHTML = "";
-  $form.reset();
+  // $form.reset();
   fetch("/register-user", {
     method: "POST",
     headers: {
@@ -34,8 +34,7 @@ $form.addEventListener("submit", function (e) {
       if (data.error) {
         $errors.innerHTML = data.error;
       } else {
-        window.location.href = "/dashboard";
+        window.location.href = "/login";
       }
-    })
-    .catch((err) => console.log(err));
+    });
 });

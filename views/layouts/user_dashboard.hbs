@@ -31,18 +31,24 @@
   </head>
   <body>
     <div class="container-fluid p-0">
-      <div class="d-flex flex-column flex-sm-row h-100">
+      <div class="d-flex flex-column flex-sm-row" style="min-height: 100vh;">
         <nav
           class="sb-sidenav accordion sb-sidenav-dark col-12 col-sm-3 col-xl-2"
         >
           <div class="sb-sidenav-menu">
             <div class="nav">
               <div class="sb-sidenav-menu-heading">Times</div>
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="/team">
                 <div class="sb-nav-link-icon"><i
                     class="fas fa-tachometer-alt"
                   ></i></div>
-                meu times
+                meu time
+              </a>
+              <a class="nav-link" href="/register-team">
+                <div class="sb-nav-link-icon"><i
+                    class="fas fa-tachometer-alt"
+                  ></i></div>
+                cadastrar time
               </a>
               <a class="nav-link" href="#">
                 <div class="sb-nav-link-icon"><i
@@ -66,7 +72,7 @@
             GoChamp
           </div>
         </nav>
-        <main class="container-fluid px-4">
+        <main class="container-fluid darkGrey-bg text-white">
           {{{body}}}
         </main>
       </div>

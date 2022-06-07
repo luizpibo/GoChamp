@@ -15,6 +15,7 @@ const registerChampionshipRouter = require("./routes/register-championship");
 const loginRouter = require("./routes/login");
 const registerUser = require("./routes/register-user");
 const dashboardRouter = require("./routes/dashboard");
+const registerTeam = require("./routes/register-team");
 //Criando aplicação express
 const app = express();
 //Definindo pasta publica
@@ -36,6 +37,7 @@ app.use("/register-championship", registerChampionshipRouter);
 app.use("/login", loginRouter);
 app.use("/register-user", registerUser);
 app.use("/dashboard", dashboardRouter);
+app.use("/register-team", registerTeam);
 //middleware
 // app.use(logger('dev'));
 // app.use(express.json());
@@ -46,7 +48,7 @@ app.use("/dashboard", dashboardRouter);
 // catch 404 and forward to error handler(rota 404)
 app.use((error, request, response, next) => {
   return response.json({
-    status: "Error",
+    error: "Error",
     mennsage: error.mennsage,
   });
 });
