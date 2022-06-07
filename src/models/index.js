@@ -125,6 +125,50 @@ const Championships = sequelize.define("championships", {
   },
 });
 
+const TeamChampionships = sequelize.define("team_championships", {
+  id: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    defaultValue: Sequelize.UUIDV4,
+    primaryKey: true,
+  },
+  teamId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+  },
+  championshipId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+  },
+  entryDate: {
+    type: DataTypes.DATE,
+    defaultValue: Sequelize.NOW,
+    allowNull: false,
+  },
+});
+
+const Games = sequelize.define("games", {
+  id: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    defaultValue: Sequelize.UUIDV4,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+      min: 3,
+      max: 55,
+    },
+  },
+  category: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
+
 // Associations ---------------------------------------------------------------
 //Associacaa entra times e usuarios onde o usuario é o dono do time e o time recebe o id do usuario dono
 try {
@@ -144,18 +188,17 @@ try {
   console.log("Erro ao criar associação entre tabelas de times e usuarios");
 }
 
-//Associacao entre campeonatos e times
+//Associacao entre campeonato e times
 try {
-  Teams.belongsToMany(Championships, {
-    through: "championship_teams",
+  Championships.hasOne(TeamChampionships);
+  TeamChampionships.belongsTo(Championships, {
+    foreignKey: { name: "championshipId" },
   });
-  Championships.belongsToMany(Teams, {
-    through: "championship_teams",
-  });
+  Teams.hasMany(TeamChampionships, { foreignKey: { name: "teamId" } });
+  TeamChampionships.belongsTo(Teams, { foreignKey: { name: "teamId" } });
 } catch (e) {
   console.log("Erro ao criar associação entre tabelas de campeonatos e times");
 }
-
 
 try {
   // Teams.sync({ force: true });
