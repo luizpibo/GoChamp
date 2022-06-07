@@ -1,33 +1,39 @@
-<main class="darkGrey-bg">
-    <div class="container-lg" style="padding: 10rem 0;">
-        <div class="row justify-content-between p-4 g-4 m-0 border border-warning shadow-lg">
-            <div class="col-12 col-lg-4 p-3 m-0 border border-warning text-white">
-                <div class="row justify-content-center">
-                    <img src={{usuario.foto}} class="rounded-circle p-0" style="width: 16rem; height: 16rem"/>
-                </div>
-                <div class="row g-3 my-4">
-                    <p>Nome: <span>{{usuario.nome}}</span></p>
-                    <p>descricao: <span>{{usuario.descricao}}</span></p>
-                    <p>Jogos: <span>{{#each usuario.jogos}}{{this}}{{/each}}</span></p>
-                    <p>Email: <span>{{usuario.email}}</span></p>
-                </div>
-            </div>
-            <div class="col-12 col-lg-8 m-0 border border-warning">
-                <div class="row g-3 my-auto justify-content-evenly align-items-center" data-aos="zoom-out-up">
-                {{#each usuario.campeonatos}}
-                    <div class="col-12 col-lg-4 ">
-                        <div class="m-0 inset-shadow border border-warning">
-                            <h3 class="jogo-ultimos_resultados bg-warning bg-gradient">{{jogo}}</h3>
-                            <h4 style="text-align: center "><a href="#" class="text-warning">{{nome}}</a></h4>
-                            <div class="d-grid px-3">
-                                <p class="text-white">Colocação: <span>{{colocacao}}</span></p>
-                                <a type="button" class="btn btn-warning align-slef-center mb-3" href={{url}}>Link do Campeonato</a>
-                            </div>
-                        </div>
-                    </div>
-                {{/each}}
-                </div>
-            </div>
-        </div>
+<div class="container-fluid py-3">
+  <div
+    class="row justify-content-between p-4 g-4 m-0 border border-warning shadow-lg rounded"
+  >
+    <div class="col-12 col-lg-4 p-3 m-0 border border-warning text-white">
+      <div class="row justify-content-center">
+        <img
+          src={{usuario.foto}}
+          class="rounded p-0"
+          style="width: 16rem; height: 16rem"
+        />
+      </div>
+      <div class="row g-3 my-4">
+        <h3>{{usuario.nome}}</h3>
+        <p><span>{{usuario.descricao}}</span></p>
+        <p><span>{{usuario.email}}</span></p>
+      </div>
     </div>
-</main>
+    <div class="col-12 col-lg-8 m-0">
+      <div class="row text-center">
+        <h3>Amigos</h3>
+        {{#each usuario.amigos}}
+          <div class="col-12 col-lg-4">
+            <div class="m-0 inset-shadow border border-warning">
+              <img
+                src={{this.foto}}
+                class="rounded p-0 m-2"
+                style="width: 9rem; height: 9rem"
+              />
+              <div class="row my-1">
+                <a href={{this.link}}><span>{{this.nome}}</span></a>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

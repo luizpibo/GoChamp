@@ -1,28 +1,35 @@
-<main class="main text-white">
+<section class="row justify-content-center align-content-center py-2 h-100">
   <div class="main-div">
     <div class="championship-details p-3">
       <h1 class="main-title">Cadastrar campeonato</h1>
-      <p class="main-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-        consequuntur reprehenderit corporis. Corporis eligendi, sit tempore
-        explicabo ad nam tenetur doloribus magni, distinctio quaerat quisquam
-        soluta similique fugit molestias reprehenderit.
-      </p>
     </div>
   </div>
-  <form class="register-championship_form">
-    <h2>Configurações gerais</h2>
-    <div class="register-championship_form-row"><label>Nome do campeonato</label><input
-      /></div>
-    <div class="register-championship_form-row"><label>Nome do criador</label><input
-      /></div>
-    <div class="register-championship_form-row">
-      <label>Data incio</label><input type="date" />
-      <label>Data termino</label><input type="date" />
-    </div>
-    <div class="register-championship_form-row"></div>
-    <div class="register-championship_form-row"><label>Nome do campeonato</label><input
-      /></div>
-    <button type="button" class="btn btn-primary">Enviar</button>
-  </form>
-</main>
+  <div class="row justify-content-center align-items-cente">
+    <form
+      class="register-championship_form"
+      action="/register-championship"
+      method="POST"
+      id="form"
+      class="form"
+    >
+      <div class="register-championship_form-row">
+        <label>Nome do campeonato</label>
+        <input
+          name="name"
+          type="text"
+          class="form-control"
+          placeholder="Nome do campeonato"
+        />
+      </div>
+      <div
+        class="register-championship_form-row d-flex flex-column flex-sm-row"
+      >
+        <label>Data incio</label><input type="date" name="initial_date" />
+        <label>Data termino</label><input type="date" name="finish_date" />
+      </div>
+      <div class="register-championship_form-row"></div>
+      <button type="button" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+
+</section>

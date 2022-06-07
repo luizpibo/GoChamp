@@ -32,38 +32,30 @@
     <div class="container-fluid p-0">
       <div class="d-flex flex-column flex-sm-row" style="min-height: 100vh;">
         <nav
-          class="sb-sidenav accordion sb-sidenav-dark col-12 col-sm-3 col-xl-2"
+          class="d-flex flex-1 sb-sidenav accordion sb-sidenav-dark col-12 col-sm-3 col-xl-2"
+          style="height: auto;"
         >
           <div class="sb-sidenav-menu">
             <div class="nav">
               <div class="sb-sidenav-menu-heading">Times</div>
-              <a class="nav-link" href="/team">
-                <div class="sb-nav-link-icon"><i
-                    class="fas fa-tachometer-alt"
-                  ></i></div>
-                meu time
-              </a>
+              {{! <a class="nav-link" href="#">
+                Meu time
+              </a> }}
               <a class="nav-link" href="/register-team">
-                <div class="sb-nav-link-icon"><i
-                    class="fas fa-tachometer-alt"
-                  ></i></div>
-                cadastrar time
-              </a>
-              <a class="nav-link" href="#">
-                <div class="sb-nav-link-icon"><i
-                    class="fas fa-tachometer-alt"
-                  ></i></div>
-                buscar time
+                Cadastrar time
               </a>
               <div class="sb-sidenav-menu-heading">Torneios</div>
+              <a class="nav-link" href="/register-championship">
+                Criar campeonato
+              </a>
               <div class="sb-sidenav-menu-heading">Pessoal</div>
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="/profile">
                 Profile
               </a>
               <a class="nav-link" href="#">
-                amigos
+                Amigos
               </a>
-              <a class="nav-link" href="/logout"> Logout </a>
+              <a class="nav-link" href="#"> Logout </a>
             </div>
           </div>
           <div class="sb-sidenav-footer">
@@ -71,7 +63,10 @@
             GoChamp
           </div>
         </nav>
-        <main class="container-fluid darkGrey-bg text-white">
+        <main
+          class="container-fluid darkGrey-bg text-white"
+          style="min-height: 100vh;"
+        >
           {{{body}}}
         </main>
       </div>

@@ -8,60 +8,27 @@ const usuario = {
   descricao: "Descrição do usuário",
   foto: "https://picsum.photos/200/300",
   jogos: ["Jogo 1", "Jogo 2", "Jogo 3"],
-  campeonatos: [
+  amigos: [
     {
       id: 1,
-      nome: "Campeonato Brasileiro",
-      jogo: "Counter Strike: Global Offensive",
-      colocacao: "primeiro",
-      formatoCampeonato: "default",
-      linkCampeonato: "#",
+      nome: "amanda",
+      foto: "https://picsum.photos/200/300",
     },
     {
-      id: 1,
-      nome: "Campeonato Brasileiro",
-      jogo: "Counter Strike: Global Offensive",
-      colocacao: "primeiro",
-      formatoCampeonato: "default",
-      linkCampeonato: "#",
+      id: 2,
+      nome: "lucas",
+      foto: "https://picsum.photos/200/300",
     },
     {
-      id: 1,
-      nome: "Campeonato Brasileiro",
-      jogo: "Counter Strike: Global Offensive",
-      colocacao: "primeiro",
-      formatoCampeonato: "default",
-      linkCampeonato: "#",
-    },
-    {
-      id: 1,
-      nome: "Campeonato Brasileiro",
-      jogo: "Counter Strike: Global Offensive",
-      colocacao: "primeiro",
-      formatoCampeonato: "default",
-      linkCampeonato: "#",
-    },
-    {
-      id: 1,
-      nome: "Campeonato Brasileiro",
-      jogo: "Counter Strike: Global Offensive",
-      colocacao: "primeiro",
-      formatoCampeonato: "default",
-      linkCampeonato: "#",
-    },
-    {
-      id: 1,
-      nome: "Campeonato Brasileiro",
-      jogo: "Counter Strike: Global Offensive",
-      colocacao: "primeiro",
-      formatoCampeonato: "default",
-      linkCampeonato: "#",
+      id: 3,
+      nome: "davi",
+      foto: "https://picsum.photos/200/300",
     },
   ],
 };
 
 router.get("/", function (req, res, next) {
-  res.render("profile", { usuario: usuario });
+  res.render("profile", { layout: "user_dashboard.hbs", usuario: usuario });
 });
 
 module.exports = router;
