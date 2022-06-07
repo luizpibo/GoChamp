@@ -10,7 +10,6 @@ var createError = require("http-errors");
 //Importando rotas
 const indexRouter = require("./routes/index");
 const profileRouter = require("./routes/profile");
-const aboutRouter = require("./routes/about");
 const registerChampionshipRouter = require("./routes/register-championship");
 const loginRouter = require("./routes/login");
 const registerUser = require("./routes/register-user");
@@ -33,7 +32,6 @@ app.set("views", "./views");
 //Rotas index
 app.use("/", indexRouter);
 app.use("/profile", profileRouter);
-app.use("/about", aboutRouter);
 app.use("/register-championship", registerChampionshipRouter);
 app.use("/login", loginRouter);
 app.use("/register-user", registerUser);

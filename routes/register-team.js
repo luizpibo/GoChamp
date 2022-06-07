@@ -5,17 +5,20 @@ const CreateTeamController = require("../src/TeamCases/createTeam/CreateTeamCont
 const createTeamController = new CreateTeamController.module();
 const { Teams } = require("../src/models");
 
+const uploadImg = require("../src/middlewares/uploadImage");
+
 router.get("/", async function (req, res, next) {
   const dataTeams = await Teams.findAll();
   const teams = dataTeams.map((team) => {
     return {
       name: team.dataValues.name,
       game: team.dataValues.game,
+      imgProfileDir: team.dataValues.imgProfileDir,
     };
   });
   res.render("register-team", { layout: "user_dashboard", teams });
 });
 
-router.post("/", createTeamController.handle);
+router.post("/", uploadImg.single("image"), createTeamController.handle);
 
 module.exports = router;

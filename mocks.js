@@ -89,6 +89,4 @@ const campeonatosDisponiveis = [
   },
 ];
 
-module.exports = {
-    campeonatosDisponiveis,
-}
+module.exports = campeonatosDisponiveis;

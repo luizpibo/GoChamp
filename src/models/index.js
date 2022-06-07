@@ -50,6 +50,11 @@ const Teams = sequelize.define("teams", {
     type: DataTypes.UUID,
     allowNull: false,
   },
+  imgProfileDir: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    defaultValue: "defaultProfile.png",
+  },
   game: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -200,14 +205,14 @@ try {
   console.log("Erro ao criar associação entre tabelas de campeonatos e times");
 }
 
-try {
-  // Teams.sync({ force: true });
-  // Championships.sync({ force: true });
-  // Users.sync({ force: true });
-  sequelize.sync();
-} catch (e) {
-  console.log("Erro ao sincronizar tabelas");
-}
+// try {
+//   // Teams.sync({ force: true });
+//   // Championships.sync({ force: true });
+//   // Users.sync({ force: true });
+//   // sequelize.sync();
+// } catch (e) {
+//   console.log("Erro ao sincronizar tabelas");
+// }
 
 module.exports = {
   Users,

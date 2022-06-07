@@ -31,6 +31,16 @@
         </select>
       </div>
     </div>
+    <div class="form-group">
+      <label for="name">Foto de perfil</label>
+      <input
+        type="file"
+        class="form-control"
+        id="profile_picture"
+        name="profile_picture"
+        placeholder="Foto de perfil do time"
+      />
+    </div>
     <span id="error">
 
     </span>
@@ -42,15 +52,32 @@
   </form>
   <section class="col-12 col-md-7 py-4 h-100">
     <h2 class="text-center">Todos os Times</h2>
-    <div class="w-100 bg-dark rounded overflow-scroll" style="height: 300px;">
-      {{#each teams}}
-        <div class="w-full">
-          <div class="card-body">
-            <h5 class="card-title">{{name}}</h5>
-            <p class="card-text">{{game}}</p>
+    <div
+      class="container-fluid w-100 bg-dark rounded overflow-scroll py-3"
+      style="height: 300px;"
+    >
+      <div class="row g-3">
+        {{#each teams}}
+          <div
+            class="d-flex flex-row justify-content-between inset-shadow px-3"
+          >
+            <img
+              class="rounded"
+              src="img/teams_profiles/{{imgProfileDir}}"
+              alt="{{name}}"
+              height="80px"
+              width="80px"
+            />
+            <div class="col-5">
+              <h5 class="card-title">{{name}}</h5>
+              <p class="card-text">{{game}}</p>
+            </div>
+            <div class="d-flex col-3 align-items-center">
+              <a href="/teams/{{id}}" class="btn btn-primary w-100">Ver time</a>
+            </div>
           </div>
-        </div>
-      {{/each}}
+        {{/each}}
+      </div>
     </div>
   </section>
 </div>

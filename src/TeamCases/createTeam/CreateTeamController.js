@@ -3,15 +3,21 @@ const CreateTeamUseCase = require("./CreateTeamUseCase");
 class CreateUserController {
   async handle(request, response) {
     const { name, game, token } = request.body;
+    const { file } = request;
     const createTeamUseCase = new CreateTeamUseCase.module();
-    const team = await createTeamUseCase.execute({
+    console.log("Preparando para criar time");
+    console.log(name, game, token, file);
+    const result = await createTeamUseCase.execute({
       name,
       game,
       token,
+      file,
     });
 
-    if (team) {
-      return response.redirect("/register-team");
+    if (result) {
+      return response.status(200).json({
+        message: "Time criado com sucesso",
+      });
     }
 
     return response.status(400).json({
