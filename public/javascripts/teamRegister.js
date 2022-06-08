@@ -1,30 +1,32 @@
 const $form = document.querySelector("#form");
 const $name = document.querySelector("#name");
-const $game = document.querySelector("#games");
+const $game = document.querySelector("#game");
 const $error = document.querySelector("#error");
+const $image = document.querySelector("#image");
 
-$form.addEventListener("submit", function (e) {
+$form.addEventListener("submit", async function (e) {
   e.preventDefault();
-  const newTeam = {
-    name: $name.value,
-    game: $game.value,
-    token: localStorage.getItem("token-GoChamp"),
-  };
-  fetch("/register-team", {
+
+  let newTeam = new FormData($form);
+  newTeam.append("token", localStorage.getItem("token-GoChamp"));
+  console.log("new team", newTeam);
+  await fetch("/register-team", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token-GoChamp")}`,
     },
-    body: JSON.stringify(newTeam),
+    body: newTeam,
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       if (data.error) {
         $error.innerHTML = "Já existe uma equipe com esse nome";
       } else {
         $form.reset();
         console.log("time cadastrado com sucesso");
       }
+    })
+    .catch((err) => {
+      $error.innerHTML = "Erro ao cadastrar time";
     });
 });

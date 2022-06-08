@@ -18,10 +18,17 @@ const registerTeam = require("./routes/register-team");
 
 //Criando aplicação express
 const app = express();
-
-//Definindo pasta publica
-app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+//Definindo pasta publica
 app.use(express.static("public"));
 
 // view engine setup (difinindo diretório de views)

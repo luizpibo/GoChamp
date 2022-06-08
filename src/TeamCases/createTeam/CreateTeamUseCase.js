@@ -1,15 +1,17 @@
 const { Teams } = require("../../models");
 const jwt = require("jsonwebtoken");
 
-class CreateUserUseCase {
+class CreateTeamUseCase {
   async execute({ name, game, token, file }) {
-    const userAlreadyExists = await Teams.findOne({ where: { name: name } });
+    const TeamAlreadyExists = await Teams.findOne({ where: { name: name } });
     let ownerId = "";
 
-    if (userAlreadyExists) {
+    console.log("Dados do time: ", name, game, token, file);
+
+    if (TeamAlreadyExists) {
       throw new Error("Nome de time já cadastrado");
     }
-    console.log("cadastrando novo time");
+
     jwt.verify(token, process.env.JWT_KEY, function (err, decoded) {
       if (err) {
         return {
@@ -35,4 +37,4 @@ class CreateUserUseCase {
   }
 }
 
-exports.module = CreateUserUseCase;
+exports.module = CreateTeamUseCase;

@@ -5,8 +5,6 @@ class CreateUserController {
     const { name, game, token } = request.body;
     const { file } = request;
     const createTeamUseCase = new CreateTeamUseCase.module();
-    console.log("Preparando para criar time");
-    console.log(name, game, token, file);
     const result = await createTeamUseCase.execute({
       name,
       game,

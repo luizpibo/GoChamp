@@ -8,6 +8,7 @@
     id="form"
     class="form"
     method="POST"
+    enctype="multipart/form-data"
   >
     <div class="form-group">
       <label for="name">Nome do time</label>
@@ -22,7 +23,7 @@
     <div class="form-group">
       <div class="form-group my-3">
         <label for="games">Jogo</label>
-        <select class="form-control" name="games" id="games" form="form">
+        <select class="form-control" name="game" id="game" form="form">
           <option value="Counter-Strike: Global Offensive">Counter-Strike:Global
             Offensive</option>
           <option value="Rocket League">Rocket League</option>
@@ -36,19 +37,19 @@
       <input
         type="file"
         class="form-control"
-        id="profile_picture"
-        name="profile_picture"
+        id="image"
+        name="image"
         placeholder="Foto de perfil do time"
       />
     </div>
-    <span id="error">
-
-    </span>
-    <input
-      type="submit"
-      class="btn btn-warning btn-block my-3 px-5"
-      value="Cadastrar"
-    />
+    <div>
+      <div id="error"></div>
+      <input
+        type="submit"
+        class="btn btn-warning btn-block my-3 px-5"
+        value="Cadastrar"
+      />
+    </div>
   </form>
   <section class="col-12 col-md-7 py-4 h-100">
     <h2 class="text-center">Todos os Times</h2>
