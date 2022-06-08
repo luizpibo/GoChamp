@@ -1,0 +1,39 @@
+<section class="container relative">
+  <div class="row justify-content-center text-center">
+    <h1>Teams</h1>
+    <form>
+      <input type="text" name="teamName" placeholder="Digite o nome do time" />
+      <input for="teamName" type="submit" value="Buscar" />
+    </form>
+  </div>
+  <div class="row w-100 inset-shadow" style="min-height: 300px">
+    <div class="col-12">
+      <table class="table table-striped text-white">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each teams}}
+            <tr>
+              <td>{{id}}</td>
+              <td>{{name}}</td>
+              <td>{{city}}</td>
+              <td>{{state}}</td>
+              <td>
+                <a href="/teams/{{id}}">Ver</a>
+                <a href="/teams/{{id}}/edit">Editar</a>
+                <a href="/teams/{{id}}/delete">Excluir</a>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
