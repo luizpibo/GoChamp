@@ -1,126 +1,132 @@
-<div id="layoutSidenav_nav">
-  <nav
-    class="sb-sidenav sb-sidenav-dark accordion"
-    id="sidenavAccordion"
-    {{! style="min-height: 100vh;" }}
-  >
-    <div class="sb-sidenav-menu">
-      <ul class="nav">
-        {{! Diver }}
-        <hr class="sidebar-divider my-0" />
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <nav
+      class="sb-sidenav sb-sidenav-dark accordion"
+      id="sidenavAccordion"
+      {{! style="min-height: 100vh;" }}
+    >
+      <div class="sb-sidenav-menu">
+        <ul class="nav">
+          {{! Diver }}
+          <hr class="sidebar-divider my-0" />
 
-        {{! Nav Item - Dashboard }}
-        <li class="nav-item active">
-          <a class="nav-link" href="/dashboard">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-          </a>
-        </li>
+          {{! Nav Item - Dashboard }}
+          <li class="nav-item active">
+            <a class="nav-link" href="/dashboard">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
 
-        {{! Divider }}
-        <hr class="sidebar-divider my-0" />
+          {{! Divider }}
+          <hr class="sidebar-divider my-0" />
 
-        {{! Nav Item - times }}
-        <li class="nav-item">
-          <a
-            class="nav-link collapsed"
-            href="#"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseTeams"
-            aria-expanded="false"
-            aria-controls="collapseTeams"
-          >
-            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-            <span>times</span>
-            <div class="sb-sidenav-collapse-arrow"><i
-                class="fas fa-angle-down"
-              ></i></div>
-          </a>
-          <div
-            class="collapse"
-            id="collapseTeams"
-            aria-labelledby="headingOne"
-            data-bs-parent="#sidenavAccordion"
-          >
-            <nav class="sb-sidenav-menu-nested nav">
-              <a class="nav-link" href="/teams">buscar time</a>
-              <a class="nav-link" href="/register-team">cadastrar time</a>
-            </nav>
-          </div>
-        </li>
-
-        {{! Divider }}
-        <hr class="sidebar-divider my-0" />
-
-        {{! Nav Item - Tournament }}
-        <li class="nav-item">
-          <a
-            class="nav-link collapsed"
-            href="#"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseChampionship"
-            aria-expanded="false"
-            aria-controls="collapseChampionship"
-          >
-            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-            <span>Torneios</span>
-            <div class="sb-sidenav-collapse-arrow"><i
-                class="fas fa-angle-down"
-              ></i></div>
-          </a>
-          <div
-            id="collapseChampionship"
-            class="collapse"
-            aria-labelledby="headingTwo"
-            data-bs-parent="#sidenavAccordion"
-          >
-            <nav
-              class="sb-sidenav-menu-nested nav accordion"
-              id="sidenavAccordionChampionship"
+          {{! Nav Item - times }}
+          <li class="nav-item">
+            <a
+              class="nav-link collapsed"
+              href="#"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTeams"
+              aria-expanded="false"
+              aria-controls="collapseTeams"
             >
-              {{! <h6 class="collapse-header">Custom Components:</h6> }}
-              <a class="nav-link" href="/championships">buscar torneio</a>
-              <a class="nav-link" href="/register-championship">cadastrar
-                torneio</a>
-            </nav>
-          </div>
-        </li>
+              <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+              <span>times</span>
+              <div class="sb-sidenav-collapse-arrow"><i
+                  class="fas fa-angle-down"
+                ></i></div>
+            </a>
+            <div
+              class="collapse"
+              id="collapseTeams"
+              aria-labelledby="headingOne"
+              data-bs-parent="#sidenavAccordion"
+            >
+              <nav class="sb-sidenav-menu-nested nav">
+                <a class="nav-link" href="/teams">buscar time</a>
+                <a class="nav-link" href="/register-team">cadastrar time</a>
+              </nav>
+            </div>
+          </li>
 
-        <hr class="sidebar-divider my-0" />
+          {{! Divider }}
+          <hr class="sidebar-divider my-0" />
 
-        <li class="nav-item">
-          <a
-            class="nav-link collapsed"
-            href="#"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseSocial"
-            aria-expanded="false"
-            aria-controls="collapseSocial"
-          >
-            <div class="sb-nav-link-icon"><i class="fas fa-fw fa-cog"></i></div>
-            <span>Social</span>
-            <div class="sb-sidenav-collapse-arrow"><i
-                class="fas fa-angle-down"
-              ></i></div>
-          </a>
-          <div
-            id="collapseSocial"
-            class="collapse"
-            aria-labelledby="headingTree"
-            data-bs-parent="#sidenavAccordion"
-          >
-            <nav class="sb-sidenav-menu-nested nav accordion">
-              <a class="nav-link" href="/profile">Profile</a>
-              <a class="nav-link" href="/friends">Amigos</a>
-              <a class="nav-link" href="/logout">Logout</a>
-            </nav>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="sb-sidenav-footer">
-      <div class="small">Logged in as:{{user.name}}</div>
-      GoChamp
-    </div>
-  </nav>
+          {{! Nav Item - Tournament }}
+          <li class="nav-item">
+            <a
+              class="nav-link collapsed"
+              href="#"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseChampionship"
+              aria-expanded="false"
+              aria-controls="collapseChampionship"
+            >
+              <div class="sb-nav-link-icon"><i
+                  class="fas fa-book-open"
+                ></i></div>
+              <span>Torneios</span>
+              <div class="sb-sidenav-collapse-arrow"><i
+                  class="fas fa-angle-down"
+                ></i></div>
+            </a>
+            <div
+              id="collapseChampionship"
+              class="collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#sidenavAccordion"
+            >
+              <nav
+                class="sb-sidenav-menu-nested nav accordion"
+                id="sidenavAccordionChampionship"
+              >
+                {{! <h6 class="collapse-header">Custom Components:</h6> }}
+                <a class="nav-link" href="/championships">buscar torneio</a>
+                <a class="nav-link" href="/register-championship">cadastrar
+                  torneio</a>
+              </nav>
+            </div>
+          </li>
+
+          <hr class="sidebar-divider my-0" />
+
+          <li class="nav-item">
+            <a
+              class="nav-link collapsed"
+              href="#"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSocial"
+              aria-expanded="false"
+              aria-controls="collapseSocial"
+            >
+              <div class="sb-nav-link-icon"><i
+                  class="fas fa-fw fa-cog"
+                ></i></div>
+              <span>Social</span>
+              <div class="sb-sidenav-collapse-arrow"><i
+                  class="fas fa-angle-down"
+                ></i></div>
+            </a>
+            <div
+              id="collapseSocial"
+              class="collapse"
+              aria-labelledby="headingTree"
+              data-bs-parent="#sidenavAccordion"
+            >
+              <nav class="sb-sidenav-menu-nested nav accordion">
+                <a class="nav-link" href="/profile">Profile</a>
+                <a class="nav-link" href="/friends">Amigos</a>
+                <a class="nav-link" href="/logout">Logout</a>
+              </nav>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="sb-sidenav-footer">
+        <div class="small">Logged in as:{{user.name}}</div>
+        GoChamp
+      </div>
+    </nav>
+  </div>
 </div>

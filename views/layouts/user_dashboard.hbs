@@ -20,9 +20,7 @@
     />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/sb-admin-2.min.css" />
     <link rel="stylesheet" href="stylesheets/global.css" />
-    <link rel="stylesheet" href="stylesheets/bootstrap.css" />
     <link rel="stylesheet" href="stylesheets/font-awesome.min.css" />
     <link rel="stylesheet" href="stylesheets/animate.css" />
     <link rel="stylesheet" href="stylesheets/style.css" />
@@ -30,16 +28,14 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   </head>
-  <body class="sb-nav-fixed darkGrey-bg">
+  <body class="sb-nav-fixed darkGrey-bg" style="min-height: auto;" >
     {{> dashboardNavBar}}
     <div id="layoutSidenav">
       {{!-- <div class="d-flex flex-column flex-sm-row" style="min-height: 100vh;"> --}}
         {{> dashboardAsideMenu }}
-        <div id="layoutSidenav_content">
-          <main>
-            <div class="container-fluid text-white px-4">
+        <div id="layoutSidenav_content" class="text-white" >
+          <main class="container-fluid px-3">
               {{{body}}}
-            </div>
           </main>
         </div>
     </div>
