@@ -1,39 +1,37 @@
-<div class="container-fluid py-3">
-  <div
-    class="row justify-content-between p-4 g-4 m-0 border border-warning shadow-lg rounded"
-  >
-    <div class="col-12 col-lg-4 p-3 m-0 border border-warning text-white">
-      <div class="row justify-content-center">
-        <img
-          src={{usuario.foto}}
-          class="rounded p-0"
-          style="width: 16rem; height: 16rem"
-        />
-      </div>
-      <div class="row g-3 my-4">
-        <h3>{{usuario.nome}}</h3>
-        <p><span>{{usuario.descricao}}</span></p>
-        <p><span>{{usuario.email}}</span></p>
-      </div>
+<div
+  class="row justify-content-between p-3 g-4 m-0 border border-warning shadow-lg rounded"
+>
+  <div class="col-12 col-lg-4 p-3 m-0 border border-warning text-white">
+    <div class="row justify-content-center">
+      <img
+        src={{usuario.foto}}
+        class="rounded p-0"
+        style="width: 16rem; height: 16rem"
+      />
     </div>
-    <div class="col-12 col-lg-8 m-0">
-      <div class="row text-center">
-        <h3>Amigos</h3>
-        {{#each usuario.amigos}}
-          <div class="col-12 col-lg-4">
-            <div class="m-0 inset-shadow border border-warning">
-              <img
-                src={{this.foto}}
-                class="rounded p-0 m-2"
-                style="width: 9rem; height: 9rem"
-              />
-              <div class="row my-1">
-                <a href={{this.link}}><span>{{this.nome}}</span></a>
-              </div>
+    <div class="row g-3 my-4">
+      <h3>{{usuario.nome}}</h3>
+      <p><span>{{usuario.descricao}}</span></p>
+      <p><span>{{usuario.email}}</span></p>
+    </div>
+  </div>
+  <div class="col-12 col-lg-8 m-0">
+    <div class="row text-center">
+      <h3>Amigos</h3>
+      {{#each usuario.amigos}}
+        <div class="col-12 col-lg-4">
+          <div class="m-0 inset-shadow border border-warning">
+            <img
+              src={{this.foto}}
+              class="rounded p-0 m-2"
+              style="width: 9rem; height: 9rem"
+            />
+            <div class="row my-1">
+              <a href={{this.link}}><span>{{this.nome}}</span></a>
             </div>
           </div>
-        {{/each}}
-      </div>
+        </div>
+      {{/each}}
     </div>
   </div>
 </div>
