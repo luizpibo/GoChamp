@@ -1,24 +1,30 @@
 var express = require("express");
 var router = express.Router();
-const { Team } = require("../src/models");
+const { Teams } = require("../src/models");
 
-router.get("/", function (req, res) {
+router.get("/", async function (req, res) {
   // pegar todos os times do banco de dado
-  let teams = Team.findAll();
-  teams = teams.map((team) => {
+  let teams = await Teams.findAll();
+
+  teamsFormated = teams.map((team) => {
     return {
       name: team.dataValues.name,
       game: team.dataValues.game,
-      imgProfileDir: team.dataValues.imgProfileDir,
+      image: team.dataValues.imgProfileDir,
     };
   });
-  res.render("showTeams", { layout: "user_dashboard", teams });
+
+  res.render("showTeams", { layout: "user_dashboard", teams: teamsFormated });
 });
-
-router.get("/:name", function (req, res, next) {
+router.get("/:name", async function (req, res, next) {
   const name = req.params.name;
-
-  res.render("team", { layout: "user_dashboard" });
+  let team = await Teams.findOne({ where: { name: name } });
+  formatedTeam = {
+    name: team.dataValues.name,
+    game: team.dataValues.game,
+    image: team.dataValues.imgProfileDir,
+  };
+  res.render("teams", { layout: "user_dashboard", team: formatedTeam });
 });
 
 module.exports = router;
