@@ -112,38 +112,33 @@
 </section>
 
 <!-- Ultimos resultados -->
-<section id="ultimos-resultados" class="container-fluid results-section">
+<section id="ultimos-resultados" class="container-fluid results-section overflow-hidden">
   <h2 class="section-title" data-aos="fade-up"><a name="ultimos-resultados"></a>Últimos resultados</h2>
-  <div class="container-fluid pb-4 overflow-hidden">
+  <div class="container-fluid p-0">
     <div class="row g-3 justify-content-evenly">
-        {{!-- <div class="grid" style="--bs-gap: 1rem;"> --}}
-        {{#each ultimosResultados}}
-          <div class="row g-3 justify-content-evenly" data-aos="zoom-out-up">
-            {{#each this}}
-            <div class="col-12 col-lg-4 ">
-              <div class="card-ultimo_resultados inset-shadow border border-warning">
-                <h3 class="jogo-ultimos_resultados bg-warning bg-gradient position-relative">{{jogo}}</h3>
-                <h4 style="text-align: center "><a href="#" class="text-warning">{{nome}}</a></h4>
-                <div class="d-grid px-3">
-                  <ul class="text-white" style="list-style: none; padding:0">
-                    <li><span>Inicio do campeonato: </span> {{dataInicio}}</li>
-                    <li><span>Final do campeonato: </span> {{dataFim}} </li>
-                    <li><span>Participantes: </span>{{quantidadeTimes}} times</li>
-                    <li>
-                      <span>Criador do campeonato: </span><a href="#">{{criadorCampeonato}}</a>
-                    </li>
-                    <li>
-                      Ganhadores: {{#each ganhadores}}<span style="margin-right: 1rem">{{this}}</span>{{/each}}
-                    </li>
-                    <li class="text-white">{{premiacao}}</li>
-                  </ul>
-                  <a type="button" class="btn btn-warning align-slef-center mb-3" href={{url}}>Link do Campeonato</a>
-                </div>
-              </div>
-            </div>
-            {{/each}}
+    {{#each ultimosResultados}}
+      <div class="col-12 col-lg-4 pb-4 pb-sm-6" data-aos="fade-left">
+        <div class="card-ultimo_resultados inset-shadow border border-warning">
+          <h3 class="jogo-ultimos_resultados bg-warning bg-gradient position-relative">{{jogo}}</h3>
+          <h4 style="text-align: center "><a href="#" class="text-warning">{{nome}}</a></h4>
+          <div class="d-grid px-3">
+            <ul class="text-white" style="list-style: none; padding:0">
+              <li><span>Inicio do campeonato: </span> {{dataInicio}}</li>
+              <li><span>Final do campeonato: </span> {{dataFim}} </li>
+              <li><span>Participantes: </span>{{quantidadeTimes}} times</li>
+              <li>
+                <span>Criador do campeonato: </span><a href="#">{{criadorCampeonato}}</a>
+              </li>
+              <li>
+                Ganhadores: {{#each ganhadores}}<span style="margin-right: 1rem">{{this}}</span>{{/each}}
+              </li>
+              <li class="text-white">{{premiacao}}</li>
+            </ul>
+            <a type="button" class="btn btn-warning align-slef-center mb-3" href={{url}}>Link do Campeonato</a>
           </div>
-        {{/each}}
+        </div>
+      </div>
+    {{/each}}
     </div>
   </div>
 </section>

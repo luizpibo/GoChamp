@@ -229,14 +229,14 @@ router.get("/", async function (req, res, next) {
     campeonatosDisponiveis.slice(0, 4),
     campeonatosDisponiveis.slice(4, 8),
   ];
-  const paginasResultados = [
-    ultimosResultados.slice(0, 3),
-    ultimosResultados.slice(3, 6),
-    ultimosResultados.slice(6, 9),
-  ];
+  // const paginasResultados = [
+  //   ultimosResultados.slice(0, 3),
+  //   ultimosResultados.slice(3, 6),
+  //   ultimosResultados.slice(6, 9),
+  // ];
   res.render("home", {
     paginasCampeonato: paginasCampeonato,
-    ultimosResultados: paginasResultados,
+    ultimosResultados: ultimosResultados,
   });
 });
 
