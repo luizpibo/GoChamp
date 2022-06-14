@@ -174,6 +174,27 @@ const Games = sequelize.define("games", {
   },
 });
 
+const refreshTokens = sequelize.define("refresh_tokens", {
+  id: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    defaultValue: Sequelize.UUIDV4,
+    primaryKey: true,
+  },
+  userId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+  },
+  token: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  createdAt: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+});
+
 // Associations ---------------------------------------------------------------
 //Associacaa entra times e usuarios onde o usuario é o dono do time e o time recebe o id do usuario dono
 try {
@@ -203,6 +224,16 @@ try {
   TeamChampionships.belongsTo(Teams, { foreignKey: { name: "teamId" } });
 } catch (e) {
   console.log("Erro ao criar associação entre tabelas de campeonatos e times");
+}
+
+//Associacao entre refreshTokens e usuarios
+try {
+  Users.hasOne(refreshTokens);
+  refreshTokens.belongsTo(Users, { foreignKey: { name: "userId" } });
+} catch (e) {
+  console.log(
+    "Erro ao criar associação entre tabelas de refreshTokens e usuarios"
+  );
 }
 
 // try {
