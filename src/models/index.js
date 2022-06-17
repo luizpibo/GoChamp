@@ -237,13 +237,14 @@ try {
 }
 
 // try {
-//   // Teams.sync({ force: true });
-//   // Championships.sync({ force: true });
-//   // Users.sync({ force: true });
-//   sequelize.sync();
+//   Teams.sync({ force: true });
+//   Championships.sync({ force: true });
+//   Users.sync({ force: true });
 // } catch (e) {
 //   console.log("Erro ao sincronizar tabelas");
 // }
+
+// sequelize.sync();
 
 module.exports = {
   Users,

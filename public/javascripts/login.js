@@ -2,6 +2,7 @@ const $form = document.querySelector(".form");
 
 const $email = document.querySelector("#email");
 const $password = document.querySelector("#password");
+const $errors = document.querySelector("#errors");
 
 $form.addEventListener("submit", async function (e) {
   e.preventDefault();
@@ -21,10 +22,10 @@ $form.addEventListener("submit", async function (e) {
     .then((res) => res.json())
     .then((data) => {
       if (data.error) {
-        console.log(data.error);
         $errors.innerHTML = data.error;
+        return undefined;
       } else {
-        localStorage.setItem("token-GoChamp", JSON.stringify(data));
+        console.log("login", data);
         return data;
       }
     })
@@ -34,9 +35,10 @@ $form.addEventListener("submit", async function (e) {
     });
 
   if (response) {
-    await accessDashboard(response);
-  } else {
-    window.redirect("/login");
+    console.log("server response", response);
+    localStorage.setItem("token-GoChamp", JSON.stringify(response.JWT_token));
+    localStorage.setItem("userId", JSON.stringify(response.userId));
+    window.location.href = "/dashboard";
   }
 });
 
