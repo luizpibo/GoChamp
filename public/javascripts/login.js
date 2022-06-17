@@ -61,7 +61,7 @@ async function accessDashboard(response) {
     })
       .then((data) => {
         if (data.status === 200) {
-          window.redirect("/dashboard");
+          window.location.href = "http://localhost:3000/dashboard";
         } else {
           return undefined;
         }

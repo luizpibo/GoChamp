@@ -1,0 +1,34 @@
+<div class="row">
+  <h1 class="text-center">Todos os campeonatos</h1>
+  <form class="form d-flex gap-3">
+    <input
+      type="text"
+      name="timeName"
+      class="form-control darkGrey-bg text-white"
+      placeholder="Pesquisar..."
+    />
+    <input type="submit" class="btn btn-warning" value="Pesquisar" />
+  </form>
+  <div
+    class="d-flex justify-content-center align-content-between flex-wrap gap-3 p-0"
+  >
+    {{#each championships}}
+      <div class="col-8 col-md-3 my-md-3">
+        <div class="card bg-dark border border-warning rounded">
+          <img
+            class="card-img-top"
+            src="/img/teams_profiles/{{image}}"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h6 class="card-title">{{name}}</h6>
+            <p class="card-text">{{game}}</p>
+            <a href="/teams/{{name}}" class="btn btn-warning">
+              Ver mais
+            </a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

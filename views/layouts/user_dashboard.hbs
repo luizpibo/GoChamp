@@ -28,13 +28,13 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   </head>
-  <body class="sb-nav-fixed darkGrey-bg" style="min-height: auto;" >
+  <body class="sb-nav-fixed overflow-auto darkGrey-bg" style="min-height: auto;" >
     {{> dashboardNavBar}}
-    <div id="layoutSidenav">
+    <div id="layoutSidenav ">
       {{!-- <div class="d-flex flex-column flex-sm-row" style="min-height: 100vh;"> --}}
         {{> dashboardAsideMenu }}
-        <div id="layoutSidenav_content" class="text-white" >
-          <main class="container-fluid px-3">
+        <div id="layoutSidenav_content " class="text-white darkGrey-bg" >
+          <main class="container-fluid px-3 py-4">
               {{{body}}}
           </main>
         </div>
