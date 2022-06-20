@@ -28,6 +28,11 @@ const Users = sequelize.define("users", {
       },
     },
   },
+  imgProfileDir: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    defaultValue: "defaultProfile.png",
+  },
   password: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -237,7 +242,7 @@ try {
 }
 
 // try {
-//   sequelize.sync();
+//   sequelize.sync({ force: true });
 // } catch (e) {
 //   console.log("erro na sincronização do DB");
 // }

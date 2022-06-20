@@ -8,8 +8,8 @@ class CreateTeamUseCase {
     if (TeamAlreadyExists) {
       throw new Error("Nome de time já cadastrado");
     }
-    console.log("codigo de criacao do token", process.env.JWT_KEY);
-    const tokenresult = await jwt.verify(
+
+    const tokenresult = jwt.verify(
       token,
       process.env.JWT_KEY,
       function (err, decoded) {
@@ -23,7 +23,7 @@ class CreateTeamUseCase {
         }
       }
     );
-    console.log("resultado da verificacao do token", tokenresult);
+
     const newTeam = await Teams.create({
       name,
       game,
@@ -35,7 +35,7 @@ class CreateTeamUseCase {
       return true;
     }
 
-    return false;
+    return null;
   }
 }
 

@@ -5,22 +5,26 @@ class CreateUserController {
     const { name, game, token } = request.body;
     const { file } = request;
     const createTeamUseCase = new CreateTeamUseCase.module();
-    const result = await createTeamUseCase.execute({
-      name,
-      game,
-      token,
-      file,
-    });
-
-    if (result) {
-      return response.status(200).json({
-        success: "Time criado com sucesso",
+    try {
+      const team = await createTeamUseCase.execute({
+        name,
+        game,
+        token,
+        file,
+      });
+      if (team) {
+        return response.status(200).json({
+          success: "Time criado com sucesso",
+        });
+      }
+      response.status(400).json({
+        error: "Não foi possível criar o time",
+      });
+    } catch (e) {
+      response.json({
+        error: "Erro ao cadastrar o time",
       });
     }
-
-    return response.status(400).json({
-      error: "Não foi possível criar o time",
-    });
   }
 }
 

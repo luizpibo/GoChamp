@@ -3,7 +3,7 @@ const multer = require("multer");
 module.exports = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, "./public/img/teams_profiles");
+      cb(null, "./public/img/teams_img_profiles");
     },
     filename: (req, file, cb) => {
       cb(null, Date.now().toString() + "_" + file.originalname);

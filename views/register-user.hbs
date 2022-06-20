@@ -5,12 +5,13 @@
         <div class="login-form border border-warning py-4 px-5 rounded">
           <h2 class="text-white">Register</h2>
           <form
+            class="form"
             action="/register-team"
             id="form"
             name="form"
-            class="form"
             method="POST"
           >
+
             <div class="form-floating mb-3">
               <input
                 class="form-control darkGrey-bg text-white"
@@ -51,7 +52,17 @@
               />
               <label for="confirmPassword">Confirme a senha</label>
             </div>
-            <div id="errors" class="errors text-light">
+            <div class="form-group">
+              <label for="name">Foto de perfil</label>
+              <input
+                type="file"
+                class="form-control"
+                id="image"
+                name="image"
+                placeholder="Foto de perfil do time"
+              />
+            </div>
+            <div id="error" class="error text-light">
               <label>
                 {{errors}}
               </label>

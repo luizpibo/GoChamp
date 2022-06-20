@@ -6,10 +6,10 @@ const $image = document.querySelector("#image");
 
 $form.addEventListener("submit", async function (e) {
   e.preventDefault();
-
   let newTeam = new FormData($form);
   newTeam.append("token", localStorage.getItem("token-GoChamp"));
-  console.log("new team", $name, $game, $error);
+
+  $errors.innerHTML = "";
   await fetch("/register-team", {
     method: "POST",
     headers: {
@@ -23,7 +23,7 @@ $form.addEventListener("submit", async function (e) {
         $error.innerHTML = "Já existe uma equipe com esse nome";
       } else {
         $form.reset();
-        console.log("time cadastrado com sucesso");
+        $error.innerHTML = "time cadastrado com sucesso!";
       }
     })
     .catch((err) => {

@@ -1,11 +1,11 @@
 var express = require("express");
 var router = express.Router();
 const CreateTeamController = require("../src/TeamCases/createTeam/CreateTeamController");
-
 const createTeamController = new CreateTeamController.module();
+
+const uploadImg = require("../src/middlewares/uploadTeamProfileImage");
 const { Teams } = require("../src/models");
 
-const uploadImg = require("../src/middlewares/uploadImage");
 
 router.get("/", async function (req, res, next) {
   const dataTeams = await Teams.findAll();
