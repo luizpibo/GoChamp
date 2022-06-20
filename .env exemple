@@ -1,0 +1,5 @@
+DB_NAME = gochamp
+DB_USER = root
+DB_HOST = localhost
+DB_PASSWORD = 
+JWT_KEY = e685c2a4-5ab0-432a-acd6-a92d601a7c76
