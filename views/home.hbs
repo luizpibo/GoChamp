@@ -3,8 +3,8 @@
   <link rel="stylesheet" href="stylesheets/about.css" />
 </head>
 
-<header class="header-section">
-  <div class="header-container">
+<header class="header-section overflow-auto">
+  <div class="header-container px-3">
     <div class="div-logo">
       <a class="site-logo" href="/">
         <img src="img/medalha.png" width="60px" alt="Logo GoChamp" />
@@ -12,11 +12,11 @@
       </a>
     </div>
     <!-- responsive -->
-    <div class="nav-switch">
+    {{!-- <div class="nav-switch">
       <i class="fa fa-bars"></i>
-    </div>
+    </div> --}}
     <!-- site menu -->
-    <nav class="main-menu">
+    <nav class="main-menu px-3">
       <ul class="m-0">
         <li><a href="#campeonatos-disponiveis">Campeonatos disponíveis</a></li>
         <li><a href="#ultimos-resultados">Ultimos resultados</a></li>
@@ -29,9 +29,9 @@
 </header>
 
 <!-- apresentacao section -->
-<section class="presentention set-bg row text-white align-items-center justify-content-center w-100 p-0 m-0" data-setbg="img/e-sports.jpeg">
-    <div class="container" data-aos="fade-up">
-      <div class="row col-6 p-5 align-content-center h-100 gradientBgGrey">
+<section class="presentention set-bg row text-white align-items-center justify-content-center w-100 p-0 m-0" data-setbg="img/e-sports.jpeg" style="min-height: 100vh;">
+    <div class="container-fluid p-0" data-aos="fade-up">
+      <div class="row col-12 col-md-6 m-0 align-content-center h-100 gradientBgGrey">
         <h1>
           Gerencie seus campeonatos
         </h1>
@@ -45,8 +45,8 @@
 </section>
 
 <!-- Latest news section -->
-<section class="latest-championships-section">
-  <div class="lc-title">Top Campeões</div>
+<section class="d-flex align-items-center justify-content-start">
+  <div class=" bg-warning col-4 col-md-3 text-center d-flex align-items-center justify-content-center" style="height: 5rem;">Top Campeões</div>
   <div class="news-ticker">
     <div class="news-ticker-contant">
       <div class="nt-item">
@@ -143,13 +143,13 @@
   </div>
 </section>
 
-<section class="about container-fluid position-relative overflow-hidden" id="sobre">
+<section class="about container-fluid position-relative overflow-hidden bg-dark inset-shadow" id="sobre" style="min-height: 40rem;">
     <img src="img/ryu.png" class="position-absolute ryu-about" data-aos="fade-right"/>
     <img src="img/csgo_about.png" class="position-absolute csgo-about" data-aos="fade-left"/>
-
+  <div class="container">
     <div class="row text-white about-text-div">
-      <div class="col-12 col-md-6" data-aos="fade-up">
-        <h2 class="about-title"><a name="sobre">ultimos-resultados</a>Sobre nós</h2>
+      <div class="col-12 col-md-6 pt-4 pl-4" data-aos="fade-up">
+        <h2 class="about-title"><a name="sobre"></a>Sobre nós</h2>
         <p class="about-text">
             A equipe começou os trabalhos em 2022 com o intuito de fazer um
             sistema para um trabalho de faculdade e até então seguimos adicionando
@@ -161,6 +161,7 @@
         </p>
       </div>
     </div>
+  </div>
 </section>
 
 <section class="footer-top-section">
