@@ -9,9 +9,7 @@ class CreateUserUseCase {
     }
     const passwordHash = await hash(password, 8);
     const user = await Users.create({ name, email, password: passwordHash });
-    if (user) {
-      return { menssage: "Usuário criado com sucesso" };
-    }
+    return user;
   }
 }
 

@@ -5,7 +5,7 @@ const $password = document.querySelector("#password");
 const $confirmPassword = document.querySelector("#confirmPassword");
 const $errors = document.querySelector("#errors");
 
-$form.addEventListener("submit", function (e) {
+$form.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const user = {
@@ -22,8 +22,9 @@ $form.addEventListener("submit", function (e) {
 
   $errors.innerHTML = "";
   // $form.reset();
-  fetch("/register-user", {
+  await fetch("/register-user", {
     method: "POST",
+    redirect: "follow",
     headers: {
       "Content-Type": "application/json",
     },
@@ -33,8 +34,8 @@ $form.addEventListener("submit", function (e) {
     .then((data) => {
       if (data.error) {
         $errors.innerHTML = data.error;
-      } else {
-        window.location.href = "/login";
+      }else {
+        window.location = '/login'
       }
     });
 });

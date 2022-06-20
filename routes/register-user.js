@@ -5,7 +5,7 @@ const CreateUserController = require("../src/userCases/createUser/CreateUserCont
 const createUserController = new CreateUserController.module();
 
 router.get("/", function (req, res) {
-  res.render("register-user", {});
+  res.render("register-user");
 });
 
 router.post("/", createUserController.handle);

@@ -14,7 +14,7 @@ class CreateUserController {
 
     if (result) {
       return response.status(200).json({
-        message: "Time criado com sucesso",
+        success: "Time criado com sucesso",
       });
     }
 

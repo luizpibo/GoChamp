@@ -9,7 +9,7 @@ $form.addEventListener("submit", async function (e) {
 
   let newTeam = new FormData($form);
   newTeam.append("token", localStorage.getItem("token-GoChamp"));
-  console.log("new team", newTeam);
+  console.log("new team", $name, $game, $error);
   await fetch("/register-team", {
     method: "POST",
     headers: {
