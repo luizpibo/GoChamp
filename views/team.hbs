@@ -1,10 +1,52 @@
-<div class="d-flex flex-row align-content-center justify-content-center py-3">
+<div
+  class="d-flex flex-column flex-md-row justify-content-center align-items-center flex-row py-3 gap-4"
+  style="max-height: 100vh;"
+>
+  <div
+    class="d-flex flex-column justify-items-center align-items-center flex-row py-3 gap-3 col-12 col-md-4"
+  >
+    <img
+      src="/img/teams_img_profiles/{{team.image}}"
+      alt="foto de perfil do time {{team.name}}"
+      class="img-fluid rounded"
+      style="width: 200px; height: 200px;"
+    />
+    <div
+      class="border border-warning p-3 rounded inset-shadow text-center w-100"
+    >
+      <h2 id="teamName">{{team.name}}</h2>
+    </div>
+    <form action="/team-invite" method="post" id="form">
+      <input
+        type="submit"
+        class="btn btn-warning btn-block my-3 px-5"
+        value="Entrar no time"
+      />
+    </form>
+  </div>
 
-  <img
-    src="/img/teams_profiles/{{team.image}}"
-    alt="foto de perfil do time {{team.name}}"
-  />
-
-  <h2>{{team.name}}</h2>
-
+  <section
+    class="d-flex flex-column col-12 col-md-6 align-content-center text-center"
+  >
+    <h3>Membros</h3>
+    <ul class="p-0">
+      {{#each members}}
+        <li class="d-flex gap-3 inset-shadow p-3 gap-2 rounded">
+          <img
+            src="/img/users_img_profiles/{{image}}"
+            alt="foto de perfil do membro {{name}}"
+            class="img-fluid rounded"
+            style="width: 50px; height: 50px;"
+          />
+          <div class="text-start">
+            <div>
+              {{name}}
+            </div>
+            {{email}}
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </section>
 </div>
+<script src="/javascripts/team-invite.js"></script>

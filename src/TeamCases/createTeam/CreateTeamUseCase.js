@@ -1,4 +1,4 @@
-const { Teams } = require("../../models");
+const { Teams, TeamMembers } = require("../../models");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
 
@@ -23,7 +23,10 @@ class CreateTeamUseCase {
       game,
       ownerId,
     });
-
+    const team_member = await TeamMembers.create({
+      teamId: newTeam.id,
+      userId: ownerId,
+    });
     if (file) {
       const imagesPath = "./public/img/teams_img_profiles/";
       const imgOldPath = imagesPath + file.filename;

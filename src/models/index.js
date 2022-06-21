@@ -258,4 +258,7 @@ module.exports = {
   Users,
   Teams,
   Championships,
+  TeamMembers,
+  TeamChampionships,
+  Games,
 };

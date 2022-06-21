@@ -17,7 +17,7 @@ const dashboardRouter = require("./routes/dashboard");
 const registerTeam = require("./routes/register-team");
 const teamsRouter = require("./routes/teams");
 const championshipsRouter = require("./routes/championships");
-
+const teamInviteRouter = require("./routes/team-invite");
 //Criando aplicação express
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,6 +48,7 @@ app.use("/dashboard", dashboardRouter);
 app.use("/register-team", registerTeam);
 app.use("/teams", teamsRouter);
 app.use("/championships", championshipsRouter);
+app.use("/team-invite", teamInviteRouter);
 
 // catch 404 and forward to error handler(rota 404)
 app.use((error, request, response, next) => {
