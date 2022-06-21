@@ -5,6 +5,7 @@ class CreateUserController {
     const { name, email, password } = request.body;
     const { file } = request;
     const createUserUseCase = new CreateUserUseCase.module();
+
     try {
       const user = await createUserUseCase.execute({
         name,
@@ -12,15 +13,19 @@ class CreateUserController {
         password,
         file,
       });
-
+      console.log(user);
       if (user) {
-        response.json({
+        response.status(201).json({
           success: "usuario cadastrado",
+        });
+      } else {
+        response.status(200).json({
+          error: "Não foi possível criar o usuario",
         });
       }
     } catch (e) {
-      response.json({
-        error: "Erro ao cadastrar o usuario",
+      response.status(200).json({
+        error: e.Error,
       });
     }
   }

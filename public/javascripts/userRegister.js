@@ -21,17 +21,10 @@ $form.addEventListener("submit", async function (e) {
   })
     .then((res) => res.json())
     .then((data) => {
-      if (data.error) {
-        $errors.innerHTML = "data.error";
-      } else {
+      if (data.success) {
         window.location = "/login";
+      } else {
+        $errors.innerHTML = "Erro ao cadastrar usuário";
       }
     });
 });
-
-// const user = {
-//   name: $name.value,
-//   email: $email.value,
-//   password: $password.value,
-//   confirmPassword: $confirmPassword.value,
-// };

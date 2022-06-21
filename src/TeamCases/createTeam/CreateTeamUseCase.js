@@ -31,6 +31,21 @@ class CreateTeamUseCase {
       imgProfileDir: file.filename || null,
     });
 
+    if (file) {
+      const imagesPath = "./public/img/teams_img_profiles/";
+      const imgOldPath = imagesPath + file.filename;
+      const newImageProfilePath = imagesPath + newTeam.dataValues.id + ".jpg";
+      fs.rename(imgOldPath, newImageProfilePath, async (err) => {
+        if (err) {
+          console.log("erro ao renomear arquivo");
+        } else {
+          newTeam.set({
+            imgProfileDir: newTeam.dataValues.id + ".jpg",
+          });
+          await newTeam.save();
+        }
+      });
+    }
     if (newTeam) {
       return true;
     }
