@@ -13,10 +13,10 @@ class CreateUserController {
         password,
         file,
       });
-      console.log(user);
+
       if (user) {
         response.status(201).json({
-          success: "usuario cadastrado",
+          success: "usuário cadastrado",
         });
       } else {
         response.status(200).json({

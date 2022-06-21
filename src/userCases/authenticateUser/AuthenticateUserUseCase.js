@@ -1,6 +1,6 @@
 const { Users } = require("../../models");
-const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
 class AuthenticateUserUseCase {
   async execute(request) {
@@ -22,11 +22,11 @@ class AuthenticateUserUseCase {
     }
 
     //Gerar token do usuario
-    const JWT_token = await jwt.sign({ id: userValues.id }, process.env.JWT_KEY, {
+    const JWT_token = jwt.sign({ id: userValues.id }, process.env.JWT_KEY, {
       subject: userValues.id,
       expiresIn: "1d",
     });
-    
+
     return {
       JWT_token,
       userId: userValues.id,

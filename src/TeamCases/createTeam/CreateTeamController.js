@@ -13,17 +13,19 @@ class CreateUserController {
         token,
         file,
       });
+      
       if (team) {
-        return response.status(201).json({
+        response.status(201).json({
           success: "Time criado com sucesso",
         });
+      } else {
+        response.status(200).json({
+          error: "Não foi possível criar o time",
+        });
       }
-      response.status(400).json({
-        error: "Não foi possível criar o time",
-      });
     } catch (e) {
-      response.status(400).json({
-        error: e,
+      response.status(200).json({
+        error: e.Error,
       });
     }
   }

@@ -9,7 +9,7 @@ $form.addEventListener("submit", async function (e) {
   let newTeam = new FormData($form);
   newTeam.append("token", localStorage.getItem("token-GoChamp"));
 
-  $errors.innerHTML = "";
+  $error.innerHTML = "";
   await fetch("/register-team", {
     method: "POST",
     headers: {
@@ -19,11 +19,13 @@ $form.addEventListener("submit", async function (e) {
   })
     .then((res) => res.json())
     .then((data) => {
-      if (data.error) {
-        $error.innerHTML = "Já existe uma equipe com esse nome";
-      } else {
+      console.log("data", data);
+      if (data.success) {
         $form.reset();
         $error.innerHTML = "time cadastrado com sucesso!";
+        location.reload();
+      } else {
+        $error.innerHTML = "Já existe uma equipe com esse nome";
       }
     })
     .catch((err) => {

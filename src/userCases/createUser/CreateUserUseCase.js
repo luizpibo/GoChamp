@@ -1,6 +1,7 @@
 const { Users } = require("../../models");
 const { hash } = require("bcryptjs");
 const fs = require("fs");
+
 class CreateUserUseCase {
   async execute({ name, email, password, file }) {
     const userAlreadyExists = await Users.findOne({ where: { email: email } });
