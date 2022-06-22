@@ -90,8 +90,13 @@
           </li>
 
           <hr class="sidebar-divider my-0" />
-
-          {{!-- <li class="nav-item">
+          <li class="nav-item active">
+            <a class="nav-link" href="/logout">
+              <i class="fas fa-fw fa-sign-out" aria-hidden="true"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+          {{! <li class="nav-item">
             <a
               class="nav-link collapsed"
               href="#"
@@ -120,11 +125,11 @@
                 <a class="nav-link" href="/logout">Logout</a>
               </nav>
             </div>
-          </li> --}}
+          </li> }}
         </ul>
       </div>
       <div class="sb-sidenav-footer">
-        <div class="small">Logged in as:{{user.name}}</div>
+        <div class="small">Logged in as: {{userNickName}}</div>
         GoChamp
       </div>
     </nav>

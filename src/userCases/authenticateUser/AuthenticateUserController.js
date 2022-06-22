@@ -1,11 +1,30 @@
 const AuthenticateUserUseCase = require("./AuthenticateUserUseCase");
 class AuthenticateUserController {
   async handle(request, response, next) {
-    const { email, password } = request.body;
-    const authenticateUserUseCase = new AuthenticateUserUseCase.module();
+    console.log("request body", request.body);
+    const { nickname, password } = request.body;
 
-    const token = await authenticateUserUseCase.execute({ email, password });
-    return response.json(token);
+    const authenticateUserUseCase = new AuthenticateUserUseCase.module();
+    try {
+      const authResponse = await authenticateUserUseCase.execute({
+        nickname,
+        password,
+      });
+
+      request.session.userId = authResponse.userId;
+      request.session.userNickName = authResponse.userNickName;
+      console.log(request.session);
+      response.json({
+        success: true,
+        ...authResponse,
+      });
+    } catch (err) {
+      console.log("passou por aqui....", err);
+      response.json({
+        success: false,
+        error: err,
+      });
+    }
   }
 }
 

@@ -3,14 +3,27 @@ const { hash } = require("bcryptjs");
 const fs = require("fs");
 
 class CreateUserUseCase {
-  async execute({ name, email, password, file }) {
-    const userAlreadyExists = await Users.findOne({ where: { email: email } });
-    if (userAlreadyExists) {
-      throw new Error("Email já cadastrado");
+  async execute({ nickname, email, password, file }) {
+    const userEmailAlreadyExists = await Users.findOne({
+      where: { email: email },
+    });
+    const userNicknameAlreadyExists = await Users.findOne({
+      where: { nickname: nickname },
+    });
+
+    if (userEmailAlreadyExists) {
+      throw "Email já cadastrado";
+    }
+    if (userNicknameAlreadyExists) {
+      throw "Nickname já cadastrado";
     }
 
     const passwordHash = await hash(password, 8);
-    const newUser = await Users.create({ name, email, password: passwordHash });
+    const newUser = await Users.create({
+      nickname,
+      email,
+      password: passwordHash,
+    });
 
     if (file) {
       const imagesPath = "./public/img/users_img_profiles/";
@@ -27,6 +40,7 @@ class CreateUserUseCase {
         }
       });
     }
+
     if (newUser) {
       return newUser;
     }

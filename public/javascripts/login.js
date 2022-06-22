@@ -1,46 +1,36 @@
-const $form = document.querySelector(".form");
+const $form = document.querySelector("#form");
 
-const $email = document.querySelector("#email");
+const $nickname = document.querySelector("#nickname");
 const $password = document.querySelector("#password");
-const $errors = document.querySelector(".errors");
+const $errors = document.querySelector("#errors");
 
 $form.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const user = {
-    email: $email.value,
+    nickname: $nickname.value,
     password: $password.value,
   };
 
-  const response = await fetch("/login", {
+  await fetch("/login", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "content-type": "application/json",
     },
     body: JSON.stringify(user),
   })
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      if (data.error) {
+      if (data.success) {
+        localStorage.setItem("token-GoChamp", JSON.stringify(data.JWT_token));
+        localStorage.setItem("userId", JSON.stringify(data.userId));
+        window.location.href = "/dashboard";
+      } else {
         $errors.innerHTML = data.error;
         return undefined;
-      } else {
-        console.log("login", data);
-        return data;
       }
-    })
-    .catch((err) => {
-      console.log(err);
-      return undefined;
     });
-
-  if (response) {
-    console.log("server response", response);
-    localStorage.setItem("token-GoChamp", JSON.stringify(response.JWT_token));
-    localStorage.setItem("userId", JSON.stringify(response.userId));
-    window.location.href = "/dashboard";
-  }
 });
 
 async function accessDashboard(response) {

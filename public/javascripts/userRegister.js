@@ -1,9 +1,9 @@
 const $form = document.getElementById("form");
-const $name = document.getElementById("name");
+const $nickname = document.getElementById("nickname");
 const $email = document.getElementById("email");
 const $password = document.getElementById("password");
 const $confirmPassword = document.getElementById("confirmPassword");
-const $errors = document.getElementById("error");
+const $errors = document.getElementById("errors");
 
 $form.addEventListener("submit", async function (e) {
   e.preventDefault();
@@ -15,7 +15,7 @@ $form.addEventListener("submit", async function (e) {
   }
 
   $errors.innerHTML = "";
-  await fetch("/register-user", {
+  await fetch("/user-register", {
     method: "POST",
     body: newUser,
   })
@@ -24,7 +24,7 @@ $form.addEventListener("submit", async function (e) {
       if (data.success) {
         window.location = "/login";
       } else {
-        $errors.innerHTML = "Erro ao cadastrar usuário";
+        $errors.innerHTML = data.error;
       }
     });
 });

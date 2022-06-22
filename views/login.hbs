@@ -41,15 +41,15 @@
           value="Login"
         />
       </div>
-      <div id="error" class="error text-light">
-        <label>
+      <div>
+        <label id="errors" class="text-light">
           {{errors}}
         </label>
       </div>
       <div class="form-group">
         <p class="text-muted">
           Você não possui conta ?
-          <a class="text-warning" href="/register-user">Criar conta</a><br />
+          <a class="text-warning" href="/user-register">Criar conta</a><br />
           {{! Esqueceu sua senha ?
             <a class="text-warning" href="/forgot-password">Recuperar</a> }}
         </p>

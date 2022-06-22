@@ -20,6 +20,7 @@ const {
   teamsRoute,
   championshipsRoute,
   teamInviteRoute,
+  logoutRoute,
 } = require("./routes/index");
 
 //Criando aplicação express
@@ -69,6 +70,7 @@ app.use("/team-register", registerTeamRoute);
 app.use("/teams", teamsRoute);
 app.use("/championships", championshipsRoute);
 app.use("/team-invite", teamInviteRoute);
+app.use("/logout", logoutRoute);
 
 //404
 app.use(function (req, res, next) {

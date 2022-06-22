@@ -241,17 +241,11 @@ try {
   );
 }
 
+// Usar quando quiser resetar todas as tabelas do servidor....
 // try {
 //   sequelize.sync({ force: true });
 // } catch (e) {
 //   console.log("erro na sincronização do DB");
-// }
-// try {
-//   Teams.sync({ force: true });
-//   Championships.sync({ force: true });
-//   Users.sync({ force: true });
-// } catch (e) {
-//   console.log("Erro ao sincronizar tabelas");
 // }
 
 module.exports = {

@@ -1,17 +1,17 @@
 const { Users } = require("../../models");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const session = require("express-session");
 
 class AuthenticateUserUseCase {
   async execute(request) {
     //Obtendo dados do usuario
-    const { email, password } = request;
+    const { nickname, password } = request;
     //Verificando se o usuario existe
-    const user = await Users.findOne({ where: { email: email } });
+    const user = await Users.findOne({ where: { nickname: nickname } });
 
     if (!user) {
-      throw new Error("Email or password incorrect");
+      throw "Usuário não existente";
+      // new Error("Nickname or password incorrect");
     }
 
     const userValues = user.dataValues;
@@ -19,13 +19,8 @@ class AuthenticateUserUseCase {
     const passwordMatch = await bcrypt.compare(password, userValues.password);
 
     if (!passwordMatch) {
-      throw new Error("Email or password incorrect");
+      throw "Nickname or password incorrect";
     }
-    //
-    let session;
-    session = req.session;
-    session.userid = req.body.username;
-    console.log(request.session);
 
     //Gerar token do usuario
     const JWT_token = jwt.sign({ id: userValues.id }, process.env.JWT_KEY, {
@@ -36,6 +31,7 @@ class AuthenticateUserUseCase {
     return {
       JWT_token,
       userId: userValues.id,
+      userNickName: userValues.nickname,
     };
   }
 }
