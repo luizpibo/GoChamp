@@ -8,11 +8,32 @@
 /* *{
   font-family: "Permanent Marker", cursive;
 } */
-
 html,
 body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f555;
+}
+
+*::-webkit-scrollbar {
+
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #333333;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-image: -webkit-linear-gradient(330deg, #f6d365 0%, #fda085 100%);
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+* {
+  scrollbar-color: #f6d365 #f5f5f555;
 }
 
 h1,

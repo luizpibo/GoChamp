@@ -13,11 +13,11 @@
     </div>
     <nav class="main-menu d-flex align-items-center justify-content-end px-4">
       <ul class="m-0">
+        <li><a href="/login">Login</a></li>
+        <li><a href="/user-register">Cadastro</a></li>
         <li><a href="#campeonatos-disponiveis">Campeonatos disponíveis</a></li>
         <li><a href="#ultimos-resultados">Ultimos resultados</a></li>
         <li><a href="#sobre">Sobre</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/user-register">Cadastro</a></li>
       </ul>
     </nav>
   </div>
@@ -64,8 +64,7 @@
 </section>
 
 <!-- campeonatos disponiveis -->
-<section id="campeonatos-disponiveis" class="footer-top-section py-5 inset-shadow">
-  <div class="container-fluid">
+<section id="campeonatos-disponiveis" class="container-fluid pattern py-5 inset-shadow">
     <div class="row">
       <h2 class="section-title"><a name="campeonatos-disponiveis"></a>Campeonatos disponiveis</h2>
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-aos="fade-up">
@@ -75,8 +74,8 @@
             <div class="container-fluid">
               <div class="row g-4 align-items-center m-0">
                 {{#each this}}
-                <div class="col-md-3 mb-4" style="height: 30rem;">
-                  <div class="col-12 col-md-3 h-100 w-100 set-bg rounded m-2 card-hover" data-setbg={{bg}}>
+                <div class="col-md-3 mb-4" style="height: 20rem;">
+                  <div class="col-12 set-bg rounded m-2 card-hover" data-setbg={{bg}}>
                     <div class="fi-content text-white">
                       {{!-- <h4 class="cata strategy">{{jogo}}</h4> --}}
 
@@ -106,7 +105,6 @@
         </button>
       </div>
     </div>
-  </div>
 </section>
 
 <!-- Ultimos resultados -->

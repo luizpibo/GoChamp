@@ -225,7 +225,6 @@ const ultimosResultados = [
 
 /* GET home page. */
 router.get("/", async function (req, res, next) {
-  console.log("session", res.session);
   const paginasCampeonato = [
     campeonatosDisponiveis.slice(0, 4),
     campeonatosDisponiveis.slice(4, 8),
