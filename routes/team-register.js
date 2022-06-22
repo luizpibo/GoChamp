@@ -6,7 +6,6 @@ const createTeamController = new CreateTeamController.module();
 const uploadImg = require("../src/middlewares/uploadTeamProfileImage");
 const { Teams } = require("../src/models");
 
-
 router.get("/", async function (req, res, next) {
   const dataTeams = await Teams.findAll();
   const teams = dataTeams.map((team) => {
@@ -16,7 +15,7 @@ router.get("/", async function (req, res, next) {
       imgProfileDir: team.dataValues.imgProfileDir,
     };
   });
-  res.render("register-team", { layout: "user_dashboard", teams });
+  res.render("team-register", { layout: "user_dashboard", teams });
 });
 
 router.post("/", uploadImg.single("image"), createTeamController.handle);

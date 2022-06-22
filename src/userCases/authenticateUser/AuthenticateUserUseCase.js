@@ -1,6 +1,7 @@
 const { Users } = require("../../models");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const session = require("express-session");
 
 class AuthenticateUserUseCase {
   async execute(request) {
@@ -20,6 +21,11 @@ class AuthenticateUserUseCase {
     if (!passwordMatch) {
       throw new Error("Email or password incorrect");
     }
+    //
+    let session;
+    session = req.session;
+    session.userid = req.body.username;
+    console.log(request.session);
 
     //Gerar token do usuario
     const JWT_token = jwt.sign({ id: userValues.id }, process.env.JWT_KEY, {

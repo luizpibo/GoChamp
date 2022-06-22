@@ -6,7 +6,7 @@ const createUserController = new CreateUserController.module();
 const uploadImg = require("../src/middlewares/uploadUserProfileImage");
 
 router.get("/", function (req, res) {
-  res.render("register-user");
+  res.render("user-register");
 });
 
 router.post("/", uploadImg.single("image"), createUserController.handle);

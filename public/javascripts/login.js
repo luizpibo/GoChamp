@@ -2,7 +2,7 @@ const $form = document.querySelector(".form");
 
 const $email = document.querySelector("#email");
 const $password = document.querySelector("#password");
-const $errors = document.querySelector("#errors");
+const $errors = document.querySelector(".errors");
 
 $form.addEventListener("submit", async function (e) {
   e.preventDefault();
@@ -21,6 +21,7 @@ $form.addEventListener("submit", async function (e) {
   })
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       if (data.error) {
         $errors.innerHTML = data.error;
         return undefined;

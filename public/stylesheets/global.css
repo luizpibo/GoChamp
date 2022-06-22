@@ -83,6 +83,12 @@ ol {
   -webkit-animation: loader 0.8s linear infinite;
 }
 
+.pattern {
+  background-image: url("../img/pattern.png");
+  background-repeat: repeat;
+  padding: 72px 0;
+  box-shadow: inset 0 0 2rem 0.4em #00000077;
+}
 @keyframes loader {
   0% {
     -webkit-transform: rotate(0deg);

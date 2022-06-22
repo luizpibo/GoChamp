@@ -9,13 +9,13 @@ const Users = sequelize.define("users", {
     defaultValue: Sequelize.UUIDV4,
     primaryKey: true,
   },
-  name: {
+  nickname: {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
       notEmpty: true,
-      min: 3,
-      max: 55,
+      min: 4,
+      max: 15,
     },
   },
   email: {
