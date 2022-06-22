@@ -12,11 +12,9 @@ const db = require("./src/db.js");
 const {
   indexRoute,
   profileRoute,
-  championshipRegisterRoute,
   loginRoute,
   userRegisterRoute,
   dashboardRoute,
-  registerTeamRoute,
   teamsRoute,
   championshipsRoute,
   teamInviteRoute,
@@ -62,11 +60,9 @@ app.set("views", "./views");
 //Rotas index
 app.use("/", indexRoute);
 app.use("/login", loginRoute);
-app.use("/championship-register", championshipRegisterRoute);
 app.use("/profile", profileRoute);
 app.use("/user-register", userRegisterRoute);
 app.use("/dashboard", dashboardRoute);
-app.use("/team-register", registerTeamRoute);
 app.use("/teams", teamsRoute);
 app.use("/championships", championshipsRoute);
 app.use("/team-invite", teamInviteRoute);

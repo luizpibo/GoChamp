@@ -6,6 +6,7 @@ class CreateUserController {
     const { userId } = request.session;
     const { file } = request;
     const createTeamUseCase = new CreateTeamUseCase.module();
+    console.log("chegou aqui!!!");
     try {
       const team = await createTeamUseCase.execute({
         name,

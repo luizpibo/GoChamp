@@ -9,7 +9,7 @@ $form.addEventListener("submit", async function (e) {
   let newTeam = new FormData($form);
 
   $error.innerHTML = "";
-  await fetch("/team-register", {
+  await fetch("/dashboard/team-register", {
     method: "POST",
     // headers: {
     //   Authorization: `Bearer ${localStorage.getItem("token-GoChamp")}`,

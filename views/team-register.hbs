@@ -3,10 +3,9 @@
 >
   <form
     class="col-12 col-md-4 py-4"
-    action="/register-team"
     id="form"
+    name="form"
     class="form"
-    method="POST"
     enctype="multipart/form-data"
   >
     <div class="form-group">
@@ -58,9 +57,7 @@
     >
       <div class="row g-3">
         {{#each teams}}
-          <div
-            class="d-flex flex-row justify-content-between inset-shadow p-3"
-          >
+          <div class="d-flex flex-row justify-content-between inset-shadow p-3">
             <img
               class="rounded"
               src="/img/teams_img_profiles/{{imgProfileDir}}"
@@ -82,4 +79,4 @@
   </section>
 </div>
 
-<script src="javascripts/teamRegister.js"></script>
+<script src="/javascripts/teamRegister.js"></script>

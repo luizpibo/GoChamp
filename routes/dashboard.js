@@ -41,7 +41,6 @@ router.get(
   sessionMiddleware,
   async function (req, res, next) {
     const dataTeams = await Teams.findAll();
-    console.log("req session", req.session);
     const teams = dataTeams.map((team) => {
       return {
         name: team.dataValues.name,
@@ -55,7 +54,6 @@ router.get(
 
 router.post(
   "/team-register",
-  sessionMiddleware,
   uploadImg.single("image"),
   createTeamController.handle
 );
