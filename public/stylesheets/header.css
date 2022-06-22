@@ -1,5 +1,9 @@
 .header-section {
-  background: linear-gradient(180deg, rgba(34,34,34,1) 0%, rgba(34,34,34,0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(34, 34, 34, 1) 0%,
+    rgba(34, 34, 34, 0) 100%
+  );
   clear: both;
   overflow: hidden;
   padding: 0.25rem 0;
@@ -7,14 +11,6 @@
   width: 100%;
   z-index: 4;
 }
-
-.header-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0 2rem;
-}
-
 .div-logo {
   font-family: "Permanent Marker", cursive;
   display: flex;
@@ -58,6 +54,10 @@
   gap: 1rem;
   justify-content: flex-end;
 }
+.main-menu ul li {
+  width: max-content;
+}
+
 
 .main-menu ul li a {
   font-size: 1rem;

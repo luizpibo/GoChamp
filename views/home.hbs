@@ -1,23 +1,17 @@
 <head>
   <link rel="stylesheet" href="stylesheets/home.css" />
-  <link rel="stylesheet" href="stylesheets/about.css" />
   <link rel="stylesheet" href="stylesheets/header.css" />
 </head>
 
 <header class="header-section overflow-auto">
-  <div class="header-container px-3">
+  <div class="d-flex flex-row px-3">
     <div class="div-logo">
       <a class="site-logo" href="/">
         <img src="img/medalha.png" width="60px" alt="Logo GoChamp" />
         <h2 class="text-logo">GoChamp</h2>
       </a>
     </div>
-    <!-- responsive -->
-    {{!-- <div class="nav-switch">
-      <i class="fa fa-bars"></i>
-    </div> --}}
-    <!-- site menu -->
-    <nav class="main-menu px-3">
+    <nav class="main-menu d-flex align-items-center justify-content-end px-4">
       <ul class="m-0">
         <li><a href="#campeonatos-disponiveis">Campeonatos disponíveis</a></li>
         <li><a href="#ultimos-resultados">Ultimos resultados</a></li>
@@ -32,7 +26,7 @@
 <!-- apresentacao section -->
 <section class="presentention set-bg row text-white align-items-center justify-content-center w-100 p-0 m-0" data-setbg="img/e-sports.jpeg" style="min-height: 100vh;">
     <div class="container-fluid p-0 h-100">
-      <div class="row col-12 col-md-6 m-0 align-content-center gradientBgGrey"
+      <div class="row col-12 col-md-6 m-0 align-content-center gradientDarkGrey-bg"
         style="min-height: 100vh;">
         <div data-aos="fade-up">
           <h1>
@@ -147,12 +141,11 @@
   </div>
 </section>
 
-<section class="about container-fluid position-relative overflow-hidden bg-dark inset-shadow" id="sobre" style="min-height: 40rem;">
+<section class="about position-relative overflow-hidden bg-dark inset-shadow" id="sobre" >
     <img src="img/ryu.png" class="position-absolute ryu-about" data-aos="fade-right"/>
     <img src="img/csgo_about.png" class="position-absolute csgo-about" data-aos="fade-left"/>
-  <div class="container">
-    <div class="row text-white about-text-div">
-      <div class="col-12 col-md-6 pt-4 pl-4" data-aos="fade-up">
+  <div class="container py-4">
+      <div class="row align-content-center align-content-md-start col-12 col-md-6 p-0 m-0" data-aos="fade-up" style="min-height: 40rem;">
         <h2 class="about-title"><a name="sobre"></a>Sobre nós</h2>
         <p class="about-text">
             A equipe começou os trabalhos em 2022 com o intuito de fazer um
@@ -164,7 +157,6 @@
             email <a href="gochamp@gochamp.com">gochamp@gochamp.com</a>.
         </p>
       </div>
-    </div>
   </div>
 </section>
 

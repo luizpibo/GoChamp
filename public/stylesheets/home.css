@@ -27,7 +27,6 @@
   position: relative;
 }
 
-
 .lc-title {
   position: absolute;
   height: 100%;
@@ -51,7 +50,7 @@
   display: inline-block;
 }
 
-.nt-item{
+.nt-item {
   overflow-x: hidden;
 }
 
@@ -166,38 +165,34 @@
   transition: all 0.3s ease-in-out;
 }
 
-.card-hover{
+.card-hover {
   transition: all 0.3s ease-in-out;
 }
-.card-hover:hover{
+
+.card-hover:hover {
   transform: scale(1.05);
   box-shadow: 0 0 0.75rem yellow;
 }
-.ryu-about{
+
+.ryu-about {
   bottom: -4rem;
   left: -6rem;
 }
-
-.csgo-about{
+.csgo-about {
   right: -15rem;
   bottom: 0;
 }
-.about-text-div{
+
+.about-text-div {
   padding-bottom: 20rem;
   z-index: 1;
 }
-.gradientBgGrey{
-  background: rgb(59,59,59);
-  background: linear-gradient(90deg, rgba(59,59,59,1) 0%, rgba(34,34,34,1) 75%, rgba(255,0,0,0) 100%);    
-}
 
-@media(max-width: 762px) {
-  .ryu-about{
+@media (max-width: 762px) {
+  .ryu-about {
     display: none;
   }
-}
-@media(max-width: 672px) {
-  .csgo-about{
+  .csgo-about {
     display: none;
   }
 }
