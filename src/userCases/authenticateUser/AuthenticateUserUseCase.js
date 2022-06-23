@@ -32,6 +32,7 @@ class AuthenticateUserUseCase {
       JWT_token,
       userId: userValues.id,
       userNickName: userValues.nickname,
+      isOwner: userValues.isOwner,
     };
   }
 }

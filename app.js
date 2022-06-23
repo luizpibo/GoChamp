@@ -17,7 +17,6 @@ const {
   dashboardRoute,
   teamsRoute,
   championshipsRoute,
-  teamInviteRoute,
   logoutRoute,
 } = require("./routes/index");
 
@@ -65,7 +64,6 @@ app.use("/user-register", userRegisterRoute);
 app.use("/dashboard", dashboardRoute);
 app.use("/teams", teamsRoute);
 app.use("/championships", championshipsRoute);
-app.use("/team-invite", teamInviteRoute);
 app.use("/logout", logoutRoute);
 
 //404

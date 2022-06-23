@@ -3,7 +3,7 @@ const CreateTeamUseCase = require("./CreateTeamUseCase");
 class CreateUserController {
   async handle(request, response) {
     const { name, game } = request.body;
-    const { userId } = request.session;
+    const { userId, isOwner } = request.session;
     const { file } = request;
     const createTeamUseCase = new CreateTeamUseCase.module();
     console.log("chegou aqui!!!");
@@ -13,6 +13,7 @@ class CreateUserController {
         game,
         userId,
         file,
+        isOwner,
       });
 
       if (team) {

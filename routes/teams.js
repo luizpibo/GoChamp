@@ -23,38 +23,43 @@ router.get("/:name", async function (req, res, next) {
   if (!name) {
     res.render("showTeams", { layout: "user_dashboard" });
   } else {
-    let team = await Teams.findOne({ where: { name: name } });
-    formatedTeam = {
+    //dados do time
+    const team = await Teams.findOne({ where: { name: name } });
+
+    //formatando dados...
+    const formatedTeam = {
       name: team.dataValues.name,
       game: team.dataValues.game,
       image: team.dataValues.imgProfileDir,
+      id: team.dataValues.id,
     };
 
-    let members = await TeamMembers.findAll({
-      where: { teamId: team.dataValues.id },
+    //Buscando membro do time
+    const members = await TeamMembers.findAll({
+      where: { teamId: formatedTeam.id },
       attributes: ["userId"],
       include: [
         {
           model: Users,
           required: true,
-          attributes: ["name", "email", "imgProfileDir"],
+          attributes: ["nickname", "email", "imgProfileDir"],
         },
       ],
     });
 
-    members = members.map((member) => {
+    const formatedMembers = members.map((member) => {
       return {
-        name: member.dataValues.user.dataValues.name,
+        name: member.dataValues.user.dataValues.nickname,
         email: member.dataValues.user.dataValues.email,
         image: member.dataValues.user.dataValues.imgProfileDir,
       };
     });
 
-    if (team) {
+    if (formatedTeam) {
       res.render("team", {
         layout: "user_dashboard",
         team: formatedTeam,
-        members,
+        members: formatedMembers,
       });
     } else {
       res.render("teamNotFound", { layout: "user_dashboard" });

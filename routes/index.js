@@ -5,7 +5,6 @@ const userRegisterRoute = require("./user-register");
 const dashboardRoute = require("./dashboard");
 const teamsRoute = require("./teams");
 const championshipsRoute = require("./championships");
-const teamInviteRoute = require("./team-invite");
 const logoutRoute = require("./logout");
 
 module.exports = {
@@ -16,6 +15,5 @@ module.exports = {
   dashboardRoute,
   teamsRoute,
   championshipsRoute,
-  teamInviteRoute,
   logoutRoute,
 };

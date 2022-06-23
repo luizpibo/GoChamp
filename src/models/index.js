@@ -37,6 +37,11 @@ const Users = sequelize.define("users", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  isOwoner: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },
 });
 
 // Teams model ---------------------------------------------------------------
@@ -66,8 +71,35 @@ const Teams = sequelize.define("teams", {
   },
 });
 
+// Convites para entrar no time
+const RequestsToJoinTheTeam = sequelize.define("requests_to_Join_the_team", {
+  id: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    defaultValue: Sequelize.UUIDV4,
+    primaryKey: true,
+  },
+  userId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+  },
+  teamId: {
+    type: DataTypes.UUID,
+    allowNull: false,
+  },
+  answered: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },
+  answer: {
+    type: DataTypes.BOOLEAN,
+    allowNull: true,
+  },
+});
+
 // TeamMembers model ---------------------------------------------------------------
-const TeamMembers = sequelize.define("team_members", {
+const TeamMembers = sequelize.define("teams_members", {
   id: {
     type: DataTypes.UUID,
     allowNull: false,
@@ -179,29 +211,8 @@ const Games = sequelize.define("games", {
   },
 });
 
-const refreshTokens = sequelize.define("refresh_tokens", {
-  id: {
-    type: DataTypes.UUID,
-    allowNull: false,
-    defaultValue: Sequelize.UUIDV4,
-    primaryKey: true,
-  },
-  userId: {
-    type: DataTypes.UUID,
-    allowNull: false,
-  },
-  token: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  createdAt: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-});
-
 // Associations ---------------------------------------------------------------
-//Associacaa entra times e usuarios onde o usuario é o dono do time e o time recebe o id do usuario dono
+//dono do time - Associacao entra times e usuarios onde o usuario é o dono do time e o time recebe o id do usuario dono
 try {
   Users.hasOne(Teams);
   Teams.belongsTo(Users, { foreignKey: { name: "ownerId" } });
@@ -209,7 +220,17 @@ try {
   console.log("Erro ao criar associação entre tabelas de times e usuarios");
 }
 
-//Associacao entre times e usuarios onde um time tem varios usuarios
+//pedidos para entrar no time
+try {
+  Users.hasOne(RequestsToJoinTheTeam);
+  RequestsToJoinTheTeam.belongsTo(Users, { foreignKey: { name: "userId" } });
+  Teams.hasOne(RequestsToJoinTheTeam);
+  RequestsToJoinTheTeam.belongsTo(Teams, { foreignKey: { name: "teamId" } });
+} catch (e) {
+  console.log("Erro ao criar associação entre tabelas de times e usuarios");
+}
+
+//membros do time - Associacao  entre times e usuarios onde um time tem varios usuarios
 try {
   Users.hasOne(TeamMembers);
   TeamMembers.belongsTo(Users, { foreignKey: { name: "userId" } });
@@ -219,7 +240,7 @@ try {
   console.log("Erro ao criar associação entre tabelas de times e usuarios");
 }
 
-//Associacao entre campeonato e times
+//times do campeonato - Associacao entre campeonato e times
 try {
   Championships.hasOne(TeamChampionships);
   TeamChampionships.belongsTo(Championships, {
@@ -229,16 +250,6 @@ try {
   TeamChampionships.belongsTo(Teams, { foreignKey: { name: "teamId" } });
 } catch (e) {
   console.log("Erro ao criar associação entre tabelas de campeonatos e times");
-}
-
-//Associacao entre refreshTokens e usuarios
-try {
-  Users.hasOne(refreshTokens);
-  refreshTokens.belongsTo(Users, { foreignKey: { name: "userId" } });
-} catch (e) {
-  console.log(
-    "Erro ao criar associação entre tabelas de refreshTokens e usuarios"
-  );
 }
 
 // Usar quando quiser resetar todas as tabelas do servidor....
@@ -255,4 +266,5 @@ module.exports = {
   TeamMembers,
   TeamChampionships,
   Games,
+  RequestsToJoinTheTeam
 };

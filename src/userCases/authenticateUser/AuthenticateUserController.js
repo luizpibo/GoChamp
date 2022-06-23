@@ -13,13 +13,15 @@ class AuthenticateUserController {
 
       request.session.userId = authResponse.userId;
       request.session.userNickName = authResponse.userNickName;
-      console.log(request.session);
+      request.session.isOwner = authResponse.isOwner || false;
+
+      console.log("session", request.session);
+
       response.json({
         success: true,
         ...authResponse,
       });
     } catch (err) {
-      console.log("passou por aqui....", err);
       response.json({
         success: false,
         error: err,
