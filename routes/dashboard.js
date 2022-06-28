@@ -4,6 +4,8 @@ var router = express.Router();
 const CreateTeamController = require("../src/TeamCases/createTeam/CreateTeamController");
 const createTeamController = new CreateTeamController.module();
 
+//Rota dashboard....
+
 const uploadImg = require("../src/middlewares/uploadTeamProfileImage");
 const {
   TeamMembers,
@@ -175,7 +177,6 @@ router.get(
 
     let teamsRequests = [];
     //Para cada time, procurar requisicoes pendentes
-
     userTeams.forEach(async (element) => {
       let requests = await RequestsToJoinTheTeam.findAll({
         raw: true,
@@ -202,12 +203,13 @@ router.get(
           teamImg: request["team.imgProfileDir"],
         };
       });
+      console.log("requisicoes para o time..", formatedRequest);
       teamsRequests.push(formatedRequest);
     });
 
     console.log("todas as requesicoes..");
     console.log(teamsRequests);
-
+    //falta terminar essa parte...
     res.render("team-request", {
       layout: "user_dashboard",
     });
