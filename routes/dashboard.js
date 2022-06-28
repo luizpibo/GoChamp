@@ -5,7 +5,12 @@ const CreateTeamController = require("../src/TeamCases/createTeam/CreateTeamCont
 const createTeamController = new CreateTeamController.module();
 
 const uploadImg = require("../src/middlewares/uploadTeamProfileImage");
-const { TeamMembers, Teams, RequestsToJoinTheTeam } = require("../src/models");
+const {
+  TeamMembers,
+  Teams,
+  RequestsToJoinTheTeam,
+  Users,
+} = require("../src/models");
 
 function sessionMiddleware(req, res, next) {
   if (req.session.userId) {
@@ -72,13 +77,11 @@ router.post(
           raw: true,
           where: { name: team_name },
         });
-        console.log("time do convite", TeamAlreadyExists);
         //Se o nome estiver correto
         if (TeamAlreadyExists) {
           //checa se o usuario ja é dono de um time com
           //o mesmo jogo que do time em questao
           if (isOwner) {
-            console.log("o usuario eh dono de um time...");
             const UserTeams = await Teams.findAll({
               raw: true,
               where: { ownerId: userId },
@@ -88,13 +91,11 @@ router.post(
               const userAlreadyHasTeamWithThisGame = UserTeams.find((team) => {
                 if (team.game == TeamAlreadyExists.game) return true;
               });
-              console.log("achou um time com o jogo do time...");
               //se sim, cancelar operação..
               if (userAlreadyHasTeamWithThisGame) {
                 throw "Usuario ja possui um time para esse jogo";
               }
             }
-            console.log("o player nao possui time com esse jogo...");
           }
 
           //Checar se esse usuario ja é membro de um time desse jogo
@@ -108,8 +109,6 @@ router.post(
             },
             where: { userId: userId },
           });
-          console.log("times que o usuario e membro");
-          console.log(teamsThatThisUserIsMember);
 
           //Procurando um time com o mesmo jogo que o time da request
           if (teamsThatThisUserIsMember.length > 0) {
@@ -118,18 +117,10 @@ router.post(
                 if (team["team.game"] == TeamAlreadyExists.game) return true;
               }
             );
-            console.log(
-              "existe um time com esse o jogo..",
-              TeamsThatTheUserIsAMember
-            );
             if (TeamsThatTheUserIsAMember) {
               throw "Usuario ja é membro de um time para esse jogo!";
             }
           }
-          console.log(
-            "usuario nao esta cadastrado em um time para esse jogo...."
-          );
-
           //Checar se esse usuario ja tem convites pendentes para esse jogo
           const userRequestsToJoinATeam = await RequestsToJoinTheTeam.findAll({
             raw: true,
@@ -143,26 +134,16 @@ router.post(
               attributes: ["game"],
             },
           });
-          console.log("convites pendentes desse usuario...");
-          console.log(userRequestsToJoinATeam);
 
           if (userRequestsToJoinATeam.length > 0) {
             const userHasPendingRequestsForThisGame =
               userRequestsToJoinATeam.find((invite) => {
                 if (invite["team.game"] == TeamAlreadyExists.game) return true;
               });
-            console.log("convite pendente para esse jogo..");
-            console.log(userHasPendingRequestsForThisGame);
-
             if (userHasPendingRequestsForThisGame) {
               throw "Usuario possui requisicoes pendentes para esse jogo!";
             }
-            console.log(
-              "usuario nao tem convites pendentes para esse jogo...."
-            );
           }
-
-          console.log("criando novo convite.....");
           //Criando nova requisição para entrar no time
           const newRequest = await RequestsToJoinTheTeam.create({
             userId: userId,
@@ -178,6 +159,58 @@ router.post(
         });
       }
     }
+  }
+);
+
+router.get(
+  "/team-requests",
+  sessionMiddleware,
+  async function (req, res, next) {
+    //Todos os times do usuario
+    const userId = req.session.userId;
+    const userTeams = await Teams.findAll({
+      raw: true,
+      where: { ownerId: userId },
+    });
+
+    let teamsRequests = [];
+    //Para cada time, procurar requisicoes pendentes
+
+    userTeams.forEach(async (element) => {
+      let requests = await RequestsToJoinTheTeam.findAll({
+        raw: true,
+        where: { teamId: element.id, answered: false },
+        include: [
+          {
+            model: Teams,
+            right: true,
+          },
+          {
+            model: Users,
+            right: true,
+          },
+        ],
+      });
+
+      //Formatando requisicoes
+      var formatedRequest = requests.map((request) => {
+        return {
+          id: request.id,
+          userNickname: request["user.nickname"],
+          teamName: request["team.name"],
+          teamGame: request["team.game"],
+          teamImg: request["team.imgProfileDir"],
+        };
+      });
+      teamsRequests.push(formatedRequest);
+    });
+
+    console.log("todas as requesicoes..");
+    console.log(teamsRequests);
+
+    res.render("team-request", {
+      layout: "user_dashboard",
+    });
   }
 );
 
