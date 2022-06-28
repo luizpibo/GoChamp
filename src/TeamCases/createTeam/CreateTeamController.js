@@ -6,7 +6,6 @@ class CreateUserController {
     const { userId, isOwner } = request.session;
     const { file } = request;
     const createTeamUseCase = new CreateTeamUseCase.module();
-    console.log("chegou aqui!!!");
     try {
       const team = await createTeamUseCase.execute({
         name,
@@ -15,14 +14,12 @@ class CreateUserController {
         file,
         isOwner,
       });
-
+      console.log("time criado...");
+      console.log(team);
       if (team) {
+        response.session.isOwner = true;
         response.status(201).json({
-          success: "Time criado com sucesso",
-        });
-      } else {
-        response.json({
-          error: "Não foi possível criar o time",
+          success: true,
         });
       }
     } catch (e) {

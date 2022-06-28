@@ -15,8 +15,6 @@ class AuthenticateUserController {
       request.session.userNickName = authResponse.userNickName;
       request.session.isOwner = authResponse.isOwner || false;
 
-      console.log("session", request.session);
-
       response.json({
         success: true,
         ...authResponse,

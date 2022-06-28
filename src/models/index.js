@@ -37,7 +37,7 @@ const Users = sequelize.define("users", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  isOwoner: {
+  isOwner: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
     defaultValue: false,
