@@ -5,8 +5,6 @@ const fs = require("fs");
 class CreateTeamUseCase {
   async execute({ name, game, userId, file, isOwner }) {
     //procurando time com o nome passado
-    console.log("dados cadastro time", name, game, userId, file, isOwner);
-
     const TeamAlreadyExists = await Teams.findOne({
       raw: true,
       where: { name: name },
@@ -21,21 +19,16 @@ class CreateTeamUseCase {
         raw: true,
         where: { ownerId: userId },
       });
-      console.log("times que esse usuario e dono");
-      console.log(UserTeams);
       if (UserTeams.length > 0) {
         const userAlreadyHasTeamWithThisGame = UserTeams.find((team) => {
           if (team.game == game) return true;
         });
-        console.log("resultado do find");
-        console.log(userAlreadyHasTeamWithThisGame);
 
         if (userAlreadyHasTeamWithThisGame) {
           throw "Usuario ja possui um time para esse jogo";
         }
       }
     }
-    console.log("criando time.......");
 
     const newTeam = await Teams.create({
       name,
@@ -57,9 +50,8 @@ class CreateTeamUseCase {
     } catch (e) {
       throw "erro ao tornar o usuário dono de time";
     }
-
     const team_member = await TeamMembers.create({
-      teamId: newTeam.id,
+      teamId: newTeam.dataValues.id,
       userId: userId,
     });
 

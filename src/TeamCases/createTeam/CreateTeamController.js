@@ -14,15 +14,17 @@ class CreateUserController {
         file,
         isOwner,
       });
-      console.log("time criado...");
-      console.log(team);
+
       if (team) {
-        response.session.isOwner = true;
-        response.status(201).json({
+        if (!isOwner) {
+          request.session.isOwner = true;
+        }
+        response.json({
           success: true,
         });
       }
     } catch (e) {
+      console.log("error", e);
       response.json({
         error: e,
       });

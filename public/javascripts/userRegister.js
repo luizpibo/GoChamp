@@ -24,7 +24,7 @@ $form.addEventListener("submit", async function (e) {
       if (data.success) {
         window.location = "/login";
       } else {
-        $errors.innerHTML = data.error;
+        $errors.innerHTML = data.error.Error;
       }
     });
 });
