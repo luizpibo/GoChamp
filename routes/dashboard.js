@@ -210,6 +210,7 @@ router.get(
     console.log("todas as requesicoes..");
     console.log(teamsRequests);
     //falta terminar essa parte...
+    
     res.render("team-request", {
       layout: "user_dashboard",
     });
